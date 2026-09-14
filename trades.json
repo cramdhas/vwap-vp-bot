@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "direction": "short",
+    "entry": 4296.49,
+    "sl_price": 4302.49,
+    "tp1_price": 4288.49,
+    "level": "POC",
+    "opened_at": "2026-09-14T16:03:56.962366+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": null
+  }
+]
