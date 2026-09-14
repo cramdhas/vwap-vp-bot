@@ -6,9 +6,9 @@
     "tp1_price": 4288.49,
     "level": "POC",
     "opened_at": "2026-09-14T16:03:56.962366+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-14T17:07:07.451974+00:00",
+    "result": "loss",
+    "pnl_points": -6.0
   }
 ]
