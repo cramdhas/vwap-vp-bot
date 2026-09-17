@@ -2,7 +2,5 @@
   "last_signal_time": 1789401836.457011,
   "last_signal_direction": "short",
   "last_summary_date": "2026-09-17",
-  "zone_last_fired": {
-    "FVG-long-4304.9-4307.4": 1789640457.097762
-  }
+  "zone_last_fired": {}
 }
