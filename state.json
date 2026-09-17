@@ -2,5 +2,7 @@
   "last_signal_time": 1789401836.457011,
   "last_signal_direction": "short",
   "last_summary_date": "2026-09-17",
-  "zone_last_fired": {}
+  "zone_last_fired": {
+    "OB-short-4403.6-4412.6": 1789655486.648123
+  }
 }
