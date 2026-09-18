@@ -2,14 +2,14 @@
   "last_signal_time": {
     "VWAP+VP": 1789401836.457011,
     "Liquidity Sweep": 1789401836.457011,
-    "EMA+RSI": 1789685157.7580914,
+    "EMA+RSI": 1789720857.3701339,
     "Order Block": 1789401836.457011,
     "FVG": 1789401836.457011
   },
   "last_signal_direction": {
     "VWAP+VP": "short",
     "Liquidity Sweep": "short",
-    "EMA+RSI": "long",
+    "EMA+RSI": "short",
     "Order Block": "short",
     "FVG": "short"
   },
