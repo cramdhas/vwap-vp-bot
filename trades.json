@@ -80,5 +80,18 @@
     "result": "win",
     "pnl_points": 10,
     "pnl_price": 10.0
+  },
+  {
+    "direction": "short",
+    "entry": 4383.200195,
+    "sl_price": 4391.2,
+    "tp1_price": 4373.2,
+    "strategy": "EMA+RSI",
+    "level": "EMA Cross RSI 45.7",
+    "opened_at": "2026-09-18T19:05:45.230881+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": null
   }
 ]
