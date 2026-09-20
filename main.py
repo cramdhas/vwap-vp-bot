@@ -1,16 +1,16 @@
 """
 XAUUSD Balanced Multi-Strategy Bot (Improved Quality Version)
 -------------------------------------------------------------
-Goal: Higher quality signals (target 60-65% win rate, 8-12 signals/day)
+Goal: Higher quality signals (target 60-65% win rate)
 
 Features:
-- 5 Strategies with individual SL/TP
-- 15-minute trend bias filter (only trade with higher timeframe)
-- Session awareness:
-    • London + New York → normal filters
-    • Asian session → stricter (requires confluence)
-- Exact entry price
-- Clear strategy name in every signal
+- 5 Strategies with ATR-based Dynamic SL & TP
+- Stop Loss clamped strictly: 6.0 to 10.0 points
+- Take Profit clamped strictly: 8.0 to 12.0 points
+- 1-Hour trend bias filter (only trade in direction of 1H EMA)
+- Scale-out at TP1 (50% closed) & Stop Loss moved to Breakeven
+- Session awareness & Octa MT4 market-hour safety checks
+- Exact entry price and diagnostic logging
 """
 
 import json
@@ -26,27 +26,28 @@ TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 SYMBOL = "XAUUSD"
-LOOKBACK_BARS = 250
-# For this bot, you asked to use trader-friendly gold points: 1 point = $1.00 of XAUUSD price movement.
-# Example: TP 8 = $8.00 movement = 8 points.
-POINT_SIZE = 1.0
-
-# Risk per strategy
-STRATEGY_RISK = {
-    "VWAP+VP":         {"sl": 6.0,  "tp": 8.0},
-    "Liquidity Sweep": {"sl": 8.0,  "tp": 10.0},
-    "EMA+RSI":         {"sl": 8.0,  "tp": 10.0},
-    "Order Block":     {"sl": 8.0,  "tp": 12.0},
-    "FVG":             {"sl": 8.0,  "tp": 12.0},
-}
+LOOKBACK_BARS = 500  # Increased to 500 bars (~41h) to calculate 1-Hour EMA
+POINT_SIZE = 1.0     # 1 point = $1.00 of XAUUSD price movement
 
 COOLDOWN_SECONDS = 240
+ZONE_DEDUP_SECONDS = 3600  # don't re-alert the same OB/FVG zone within 1 hour
 
-# Session times (UTC)
-# Asian: 00:00 - 07:00
-# London: 07:00 - 12:00
-# NY: 12:00 - 21:00
-# Overlap London-NY is strongest
+# ATR Configuration & Hard Bounds
+ATR_PERIOD = 14
+MIN_SL_POINTS = 6.0   # Strict SL Floor ($6.00)
+MAX_SL_POINTS = 10.0  # Strict SL Cap ($10.00)
+MIN_TP_POINTS = 8.0   # Strict TP Floor ($8.00)
+MAX_TP_POINTS = 12.0  # Strict TP Cap ($12.00)
+BE_BUFFER = 0.50      # Profit buffer above entry for Breakeven
+
+# Multipliers for dynamic ATR sizing
+STRATEGY_ATR_CONFIG = {
+    "VWAP+VP":         {"sl_mult": 1.2, "tp1_ratio": 0.75, "tp2_ratio": 1.25},
+    "EMA+RSI":         {"sl_mult": 1.2, "tp1_ratio": 0.75, "tp2_ratio": 1.25},
+    "Liquidity Sweep": {"sl_mult": 1.4, "tp1_ratio": 0.80, "tp2_ratio": 1.35},
+    "Order Block":     {"sl_mult": 1.4, "tp1_ratio": 0.80, "tp2_ratio": 1.35},
+    "FVG":             {"sl_mult": 1.3, "tp1_ratio": 0.80, "tp2_ratio": 1.30},
+}
 
 EMA_FAST = 9
 EMA_SLOW = 21
@@ -84,8 +85,6 @@ def load_trades():
 def save_trades(trades):
     save_json(TRADE_LOG_FILE, trades)
 
-ZONE_DEDUP_SECONDS = 3600  # don't re-alert the same OB/FVG zone within 1 hour
-
 def load_state():
     default = {
         "last_signal_time": {},
@@ -97,21 +96,18 @@ def load_state():
     if not isinstance(state, dict):
         return default
 
-    # Migrate older state.json files. The previous bot used a single
-    # numeric last_signal_time / string last_signal_direction, while
-    # the current version keeps them per strategy.
     old_time = state.get("last_signal_time")
     if not isinstance(old_time, dict):
         state["last_signal_time"] = {}
         if isinstance(old_time, (int, float)):
-            for strategy in STRATEGY_RISK:
+            for strategy in STRATEGY_ATR_CONFIG:
                 state["last_signal_time"][strategy] = float(old_time)
 
     old_dir = state.get("last_signal_direction")
     if not isinstance(old_dir, dict):
         state["last_signal_direction"] = {}
         if isinstance(old_dir, str):
-            for strategy in STRATEGY_RISK:
+            for strategy in STRATEGY_ATR_CONFIG:
                 state["last_signal_direction"][strategy] = old_dir
 
     if not isinstance(state.get("zone_last_fired"), dict):
@@ -130,72 +126,120 @@ def mark_zone_fired(state, zone_key):
     state.setdefault("zone_last_fired", {})[zone_key] = time.time()
 
 
-# ============== TRADE MGMT ==============
-def open_trade(direction, entry, sl, tp, strategy, info=""):
+# ============== TRADE MGMT (SCALE-OUT & BREAKEVEN) ==============
+def price_to_points(price_distance):
+    """Convert XAUUSD price distance into this bot's gold points. 1 point = $1.00."""
+    return int(round(price_distance / POINT_SIZE))
+
+def open_trade(direction, entry, sl, tp1, tp2, strategy, info=""):
     trades = load_trades()
     trades.append({
         "direction": direction,
         "entry": entry,
         "sl_price": sl,
-        "tp1_price": tp,
+        "original_sl": sl,
+        "tp1_price": tp1,
+        "tp2_price": tp2,
+        "tp1_hit": False,
         "strategy": strategy,
         "level": info,
         "opened_at": datetime.now(timezone.utc).isoformat(),
         "status": "open",
         "closed_at": None,
         "result": None,
-        "pnl_points": None,
+        "pnl_points": 0.0,
     })
     save_trades(trades)
-
-def price_to_points(price_distance):
-    """Convert XAUUSD price distance into this bot's gold points. 1 point = $1.00."""
-    return int(round(price_distance / POINT_SIZE))
 
 def check_open_trades(price):
     trades = load_trades()
     changed = False
+
     for t in trades:
         if t["status"] != "open":
             continue
-        if t["direction"] == "long":
-            if price >= t["tp1_price"]:
-                distance = t["tp1_price"] - t["entry"]
-                t.update(status="closed", result="win",
-                         pnl_points=price_to_points(distance),
-                         pnl_price=round(distance, 2),
-                         closed_at=datetime.now(timezone.utc).isoformat())
+
+        direction = t["direction"]
+        entry = t["entry"]
+
+        # ----------------- LONG TRADES -----------------
+        if direction == "long":
+            # 1. TP1 Trigger: Scale-out 50% and move Stop Loss to Breakeven
+            if not t["tp1_hit"] and price >= t["tp1_price"]:
+                t["tp1_hit"] = True
+                t["sl_price"] = round(entry + BE_BUFFER, 2)
+                partial_pnl = price_to_points((t["tp1_price"] - entry) * 0.5)
+                t["pnl_points"] += partial_pnl
+                changed = True
+                save_trades(trades)
+                send_telegram(
+                    f"🎯 <b>TP1 HIT (+{round(t['tp1_price'] - entry, 2)} pts) — {t['strategy']}</b>\n"
+                    f"50% closed. SL moved to Breakeven: <b>{t['sl_price']:.2f}</b>"
+                )
+
+            # 2. TP2 Trigger: Final Runner closed
+            elif price >= t["tp2_price"]:
+                runner_mult = 0.5 if t["tp1_hit"] else 1.0
+                t["pnl_points"] += price_to_points((t["tp2_price"] - entry) * runner_mult)
+                t.update(status="closed", result="win", closed_at=datetime.now(timezone.utc).isoformat())
                 changed = True
                 save_trades(trades)
                 notify_result(t)
+
+            # 3. Stop Loss Trigger
             elif price <= t["sl_price"]:
-                distance = t["sl_price"] - t["entry"]
-                t.update(status="closed", result="loss",
-                         pnl_points=price_to_points(distance),
-                         pnl_price=round(distance, 2),
-                         closed_at=datetime.now(timezone.utc).isoformat())
-                changed = True
-                save_trades(trades)
-                notify_result(t)
+                if t["tp1_hit"]:
+                    # Closed remaining position at Breakeven
+                    t.update(status="closed", result="win", closed_at=datetime.now(timezone.utc).isoformat())
+                    changed = True
+                    save_trades(trades)
+                    send_telegram(f"🛡️ <b>BREAKEVEN HIT — {t['strategy']}</b>\nRemaining 50% closed at {t['sl_price']:.2f}.")
+                else:
+                    # Full Stop Loss
+                    t["pnl_points"] = -price_to_points(entry - t["sl_price"])
+                    t.update(status="closed", result="loss", closed_at=datetime.now(timezone.utc).isoformat())
+                    changed = True
+                    save_trades(trades)
+                    notify_result(t)
+
+        # ----------------- SHORT TRADES -----------------
         else:
-            if price <= t["tp1_price"]:
-                distance = t["entry"] - t["tp1_price"]
-                t.update(status="closed", result="win",
-                         pnl_points=price_to_points(distance),
-                         pnl_price=round(distance, 2),
-                         closed_at=datetime.now(timezone.utc).isoformat())
+            # 1. TP1 Trigger: Scale-out 50% and move Stop Loss to Breakeven
+            if not t["tp1_hit"] and price <= t["tp1_price"]:
+                t["tp1_hit"] = True
+                t["sl_price"] = round(entry - BE_BUFFER, 2)
+                partial_pnl = price_to_points((entry - t["tp1_price"]) * 0.5)
+                t["pnl_points"] += partial_pnl
+                changed = True
+                save_trades(trades)
+                send_telegram(
+                    f"🎯 <b>TP1 HIT (+{round(entry - t['tp1_price'], 2)} pts) — {t['strategy']}</b>\n"
+                    f"50% closed. SL moved to Breakeven: <b>{t['sl_price']:.2f}</b>"
+                )
+
+            # 2. TP2 Trigger: Final Runner closed
+            elif price <= t["tp2_price"]:
+                runner_mult = 0.5 if t["tp1_hit"] else 1.0
+                t["pnl_points"] += price_to_points((entry - t["tp2_price"]) * runner_mult)
+                t.update(status="closed", result="win", closed_at=datetime.now(timezone.utc).isoformat())
                 changed = True
                 save_trades(trades)
                 notify_result(t)
+
+            # 3. Stop Loss Trigger
             elif price >= t["sl_price"]:
-                distance = t["entry"] - t["sl_price"]
-                t.update(status="closed", result="loss",
-                         pnl_points=price_to_points(distance),
-                         pnl_price=round(distance, 2),
-                         closed_at=datetime.now(timezone.utc).isoformat())
-                changed = True
-                save_trades(trades)
-                notify_result(t)
+                if t["tp1_hit"]:
+                    t.update(status="closed", result="win", closed_at=datetime.now(timezone.utc).isoformat())
+                    changed = True
+                    save_trades(trades)
+                    send_telegram(f"🛡️ <b>BREAKEVEN HIT — {t['strategy']}</b>\nRemaining 50% closed at {t['sl_price']:.2f}.")
+                else:
+                    t["pnl_points"] = -price_to_points(t["sl_price"] - entry)
+                    t.update(status="closed", result="loss", closed_at=datetime.now(timezone.utc).isoformat())
+                    changed = True
+                    save_trades(trades)
+                    notify_result(t)
+
     if changed:
         save_trades(trades)
 
@@ -213,34 +257,31 @@ def notify_result(t):
     msg = (f"<b>{emoji}</b> — XAUUSD {t['direction'].upper()}\n"
            f"Strategy: <b>{t.get('strategy')}</b>\n"
            f"Entry: {t['entry']:.2f} | {t.get('level','-')}\n"
-           f"Result: {t['result'].upper()} | {t['pnl_points']:+d} points\n"
+           f"Result: {t['result'].upper()} | {int(t['pnl_points']):+d} points\n"
            f"Overall: {wins}W / {losses}L | WR {wr:.1f}% | Net {net_points:+.0f} points")
     send_telegram(msg)
 
 def send_daily_summary(for_date):
     trades = load_trades()
     day_str = for_date.isoformat()
-    day_trades = [t for t in trades if t["status"]=="closed" and t.get("closed_at","")[:10]==day_str]
+    day_trades = [t for t in trades if t["status"] == "closed" and t.get("closed_at", "")[:10] == day_str]
     if not day_trades:
         send_telegram(f"<b>📊 Daily Summary — {day_str}</b>\nNo closed trades.")
         return
-    wins = [t for t in day_trades if t["result"]=="win"]
-    losses = [t for t in day_trades if t["result"]=="loss"]
+    wins = [t for t in day_trades if t["result"] == "win"]
+    losses = [t for t in day_trades if t["result"] == "loss"]
     total = sum(t["pnl_points"] for t in day_trades)
-    wr = len(wins)/len(day_trades)*100
+    wr = len(wins) / len(day_trades) * 100
     by = {}
     for t in day_trades:
-        s = t.get("strategy","?")
-        by.setdefault(s, {"w":0,"l":0,"pts":0})
-        if t["result"]=="win": by[s]["w"] += 1
+        s = t.get("strategy", "?")
+        by.setdefault(s, {"w": 0, "l": 0, "pts": 0})
+        if t["result"] == "win": by[s]["w"] += 1
         else: by[s]["l"] += 1
         by[s]["pts"] += int(t.get("pnl_points") or 0)
-    lines = "\n".join(
-        f"• {s}: {v['w']}W/{v['l']}L | {v['pts']:+d} pts"
-        for s,v in by.items()
-    )
+    lines = "\n".join(f"• {s}: {v['w']}W/{v['l']}L | {v['pts']:+d} pts" for s, v in by.items())
     send_telegram(f"<b>📊 Daily Summary — {day_str}</b>\n"
-                  f"Total: {len(day_trades)} | {len(wins)}W/{len(losses)}L | WR {wr:.1f}% | Net {total:+d} points\n\n{lines}")
+                  f"Total: {len(day_trades)} | {len(wins)}W/{len(losses)}L | WR {wr:.1f}% | Net {int(total):+d} points\n\n{lines}")
 
 
 # ============== DATA ==============
@@ -257,10 +298,7 @@ def fetch_xaus_json(path, params=None, timeout=15):
             raise RuntimeError("XAUS data is unavailable")
     return data
 
-
 def fetch_spot():
-    # Preferred live XAU/USD spot source. This is an indicative market price,
-    # not an Octa broker quote.
     try:
         data = fetch_xaus_json("/api/v1/spot", {"currency": "USD", "unit": "oz", "compact": "1"}, timeout=10)
         price = data.get("spot_usd_oz")
@@ -269,7 +307,6 @@ def fetch_spot():
     except Exception as e:
         print(f"[XAUS spot fail] {e}")
 
-    # Fallbacks only for the displayed Entry price if XAUS is temporarily unavailable.
     headers = {"User-Agent": "Mozilla/5.0"}
     try:
         r = requests.get("https://data-asg.goldprice.org/dbXRates/USD", headers=headers, timeout=8)
@@ -283,7 +320,6 @@ def fetch_spot():
         pass
     return None
 
-
 def _parse_xaus_chart_points(data):
     points = data.get("points") if isinstance(data, dict) else None
     if not isinstance(points, list):
@@ -292,7 +328,6 @@ def _parse_xaus_chart_points(data):
     candles = []
     for p in points:
         try:
-            # XAUS documents chart points as {t,o,h,l,c,v}.
             ts = int(p["t"])
             o = float(p["o"])
             h = float(p["h"])
@@ -314,9 +349,7 @@ def _parse_xaus_chart_points(data):
     candles.sort(key=lambda x: x["open_time"])
     return candles
 
-
 def _get_xauusd_m5_chart(limit=LOOKBACK_BARS):
-    """Get genuine XAU/USD 5-minute OHLCV candles through XAUS's free chart API."""
     data = fetch_xaus_json(
         "/api/v1/chart",
         {"symbol": "xau", "range": "5d", "interval": "5m"},
@@ -326,7 +359,6 @@ def _get_xauusd_m5_chart(limit=LOOKBACK_BARS):
     if len(candles) < min(limit, 30):
         raise RuntimeError(f"XAUS returned only {len(candles)} XAUUSD M5 candles")
 
-    # Never let the currently forming 5-minute candle drive a signal.
     now_ms = int(datetime.now(timezone.utc).timestamp() * 1000)
     current_bucket_ms = (now_ms // (5 * 60 * 1000)) * (5 * 60 * 1000)
     candles = [c for c in candles if c["open_time"] < current_bucket_ms]
@@ -334,9 +366,7 @@ def _get_xauusd_m5_chart(limit=LOOKBACK_BARS):
         raise RuntimeError("Not enough completed XAUUSD M5 candles after removing the live candle")
     return candles[-limit:]
 
-
 def _get_xauusd_m5_intraday_fallback(limit=LOOKBACK_BARS):
-    """Fallback: aggregate XAUS's 2-minute recorded XAU/USD series into M5 bars."""
     data = fetch_xaus_json(
         "/api/v1/intraday",
         {"symbol": "xau", "hours": 48},
@@ -379,7 +409,6 @@ def _get_xauusd_m5_intraday_fallback(limit=LOOKBACK_BARS):
         raise RuntimeError(f"XAUS intraday fallback returned only {len(candles)} M5 candles")
     return candles[-limit:]
 
-
 def get_klines(limit=LOOKBACK_BARS):
     try:
         candles = _get_xauusd_m5_chart(limit)
@@ -394,45 +423,61 @@ def get_klines(limit=LOOKBACK_BARS):
 
 # ============== INDICATORS ==============
 def ema(values, period):
-    if len(values) < period: return [None]*len(values)
-    out = [None]*(period-1)
-    s = sum(values[:period])/period
+    if len(values) < period: return [None] * len(values)
+    out = [None] * (period - 1)
+    s = sum(values[:period]) / period
     out.append(s)
-    k = 2/(period+1)
+    k = 2 / (period + 1)
     for i in range(period, len(values)):
-        out.append((values[i]-out[-1])*k + out[-1])
+        out.append((values[i] - out[-1]) * k + out[-1])
     return out
 
 def rsi(closes, period=14):
-    if len(closes) < period+1: return [None]*len(closes)
-    out = [None]*period
+    if len(closes) < period + 1: return [None] * len(closes)
+    out = [None] * period
     gains, losses = [], []
-    for i in range(1, period+1):
-        ch = closes[i]-closes[i-1]
-        gains.append(max(ch,0)); losses.append(max(-ch,0))
-    ag, al = sum(gains)/period, sum(losses)/period
-    out.append(100 if al==0 else 100-(100/(1+ag/al)))
-    for i in range(period+1, len(closes)):
-        ch = closes[i]-closes[i-1]
-        ag = (ag*(period-1)+max(ch,0))/period
-        al = (al*(period-1)+max(-ch,0))/period
-        out.append(100 if al==0 else 100-(100/(1+ag/al)))
+    for i in range(1, period + 1):
+        ch = closes[i] - closes[i - 1]
+        gains.append(max(ch, 0)); losses.append(max(-ch, 0))
+    ag, al = sum(gains) / period, sum(losses) / period
+    out.append(100 if al == 0 else 100 - (100 / (1 + ag / al)))
+    for i in range(period + 1, len(closes)):
+        ch = closes[i] - closes[i - 1]
+        ag = (ag * (period - 1) + max(ch, 0)) / period
+        al = (al * (period - 1) + max(-ch, 0)) / period
+        out.append(100 if al == 0 else 100 - (100 / (1 + ag / al)))
     return out
+
+def atr(candles, period=14):
+    """Calculate the Average True Range (ATR) over closed candles."""
+    if len(candles) < period + 1:
+        return None
+    trs = []
+    for i in range(1, len(candles)):
+        h = candles[i]["high"]
+        l = candles[i]["low"]
+        prev_close = candles[i - 1]["close"]
+        true_range = max(h - l, abs(h - prev_close), abs(l - prev_close))
+        trs.append(true_range)
+    if len(trs) < period:
+        return None
+    return statistics.mean(trs[-period:])
 
 def session_vwap(candles):
     vals, cum_pv, cum_vol, day = [], 0.0, 0.0, None
     for c in candles:
-        d = datetime.fromtimestamp(c["open_time"]/1000, tz=timezone.utc).date()
+        d = datetime.fromtimestamp(c["open_time"] / 1000, tz=timezone.utc).date()
         if d != day:
             day = d; cum_pv = cum_vol = 0.0
-        typ = (c["high"]+c["low"]+c["close"])/3
-        cum_pv += typ * c["volume"]
-        cum_vol += c["volume"]
-        vals.append(cum_pv/cum_vol if cum_vol else typ)
+        typ = (c["high"] + c["low"] + c["close"]) / 3
+        vol = c["volume"] if c["volume"] > 0 else 1.0
+        cum_pv += typ * vol
+        cum_vol += vol
+        vals.append(cum_pv / cum_vol if cum_vol else typ)
     return vals
 
 def vwap_slope(vals, n=5):
-    if len(vals) < n+1: return "flat"
+    if len(vals) < n + 1: return "flat"
     d = vals[-1] - vals[-n]
     return "rising" if d > 0.05 else "falling" if d < -0.05 else "flat"
 
@@ -441,350 +486,51 @@ def volume_profile(candles, bins=10):
     lows = [c["low"] for c in candles]
     mx, mn = max(highs), min(lows)
     if mx == mn: return None
-    size = (mx-mn)/bins
-    vols = [0.0]*bins
+    size = (mx - mn) / bins
+    vols = [0.0] * bins
     for c in candles:
-        idx = max(0, min(bins-1, int((c["close"]-mn)/size)))
-        vols[idx] += c["volume"]
+        idx = max(0, min(bins - 1, int((c["close"] - mn) / size)))
+        vols[idx] += c["volume"] if c["volume"] > 0 else 1.0
     poc_i = vols.index(max(vols))
-    poc = mn + (poc_i+0.5)*size
+    poc = mn + (poc_i + 0.5) * size
     total = sum(vols)
     target = total * 0.70
     captured = vols[poc_i]
     lo = hi = poc_i
-    while captured < target and (lo>0 or hi<bins-1):
-        bel = vols[lo-1] if lo>0 else -1
-        abv = vols[hi+1] if hi<bins-1 else -1
+    while captured < target and (lo > 0 or hi < bins - 1):
+        bel = vols[lo - 1] if lo > 0 else -1
+        abv = vols[hi + 1] if hi < bins - 1 else -1
         if abv >= bel:
             hi += 1; captured += vols[hi]
         else:
             lo -= 1; captured += vols[lo]
-    return {"poc": round(poc,2), "vah": round(mn+(hi+1)*size,2), "val": round(mn+lo*size,2)}
+    return {"poc": round(poc, 2), "vah": round(mn + (hi + 1) * size, 2), "val": round(mn + lo * size, 2)}
 
 
 # ============== SESSION & BIAS ==============
 def get_session(utc_hour):
-    if 0 <= utc_hour < 7:
-        return "Asian"
-    if 7 <= utc_hour < 12:
-        return "London"
-    if 12 <= utc_hour < 21:
-        return "NewYork"
+    if 0 <= utc_hour < 7: return "Asian"
+    if 7 <= utc_hour < 12: return "London"
+    if 12 <= utc_hour < 21: return "NewYork"
     return "Late"
 
-def get_15m_bias(candles_5m):
-    """Calculate the 15m bias from actual 15m closes aggregated from XAUUSD 5m candles."""
-    if len(candles_5m) < 75:
+def get_1h_bias(candles_5m, ema_period=20):
+    """Aggregate 5-minute candles into 1-Hour closes to determine HTF trend."""
+    if len(candles_5m) < (ema_period * 12):
         return "neutral"
     groups = {}
     for c in candles_5m:
         ts = datetime.fromtimestamp(c["open_time"] / 1000, tz=timezone.utc)
-        bucket = ts.replace(minute=(ts.minute // 15) * 15, second=0, microsecond=0)
+        bucket = ts.replace(minute=0, second=0, microsecond=0)
         groups[bucket] = c["close"]
-    closes = [groups[k] for k in sorted(groups)]
-    if len(closes) < 25:
+    hourly_closes = [groups[k] for k in sorted(groups)]
+    if len(hourly_closes) < ema_period:
         return "neutral"
-    e9 = ema(closes, 9); e21 = ema(closes, 21)
-    if e9[-1] is None or e21[-1] is None or e9[-3] is None:
+    e_1h = ema(hourly_closes, ema_period)
+    if e_1h[-1] is None:
         return "neutral"
-    if e9[-1] > e21[-1] and e9[-1] > e9[-3]: return "bullish"
-    if e9[-1] < e21[-1] and e9[-1] < e9[-3]: return "bearish"
-    return "neutral"
-
-
-# ============== STRATEGIES ==============
-def near(price, level, tol=TOUCH_TOLERANCE):
-    return abs(price - level) <= tol
-
-def is_rejection(c, level, direction):
-    bh = max(c["open"], c["close"])
-    bl = min(c["open"], c["close"])
-    if direction == "long":
-        return c["low"] <= level + TOUCH_TOLERANCE and (bl - c["low"]) > 0 and c["close"] > bl
-    return c["high"] >= level - TOUCH_TOLERANCE and (c["high"] - bh) > 0 and c["close"] < bh
-
-def vol_ok(candles, idx):
-    if idx < 10: return False
-    avg = statistics.mean(c["volume"] for c in candles[idx-10:idx])
-    return candles[idx]["volume"] >= avg * VOLUME_MULT
-
-def check_vwap_vp(candles, vwap, profile):
-    if not profile: return None, None
-    last = candles[-1]
-    slope = vwap_slope(vwap)
-    for name, price in [("POC",profile["poc"]),("VAH",profile["vah"]),("VAL",profile["val"])]:
-        if not near(last["close"], price): continue
-        if slope=="rising" and is_rejection(last, price, "long") and vol_ok(candles, len(candles)-1):
-            return "long", name
-        if slope=="falling" and is_rejection(last, price, "short") and vol_ok(candles, len(candles)-1):
-            return "short", name
-    return None, None
-
-def check_liquidity_sweep(candles):
-    if len(candles) < SWING_LOOKBACK+3: return None, None
-    window = candles[-(SWING_LOOKBACK+1):-1]
-    sh = max(c["high"] for c in window)
-    sl = min(c["low"] for c in window)
-    last = candles[-1]
-    if last["low"] < sl - SWEEP_TOLERANCE and last["close"] > sl and last["close"] > last["open"]:
-        return "long", f"Sweep Low {sl:.2f}"
-    if last["high"] > sh + SWEEP_TOLERANCE and last["close"] < sh and last["close"] < last["open"]:
-        return "short", f"Sweep High {sh:.2f}"
-    return None, None
-
-def check_ema_rsi(candles):
-    closes = [c["close"] for c in candles]
-    if len(closes) < max(EMA_SLOW, RSI_PERIOD)+5: return None, None
-    ef = ema(closes, EMA_FAST)
-    es = ema(closes, EMA_SLOW)
-    r = rsi(closes, RSI_PERIOD)
-    if None in (ef[-1], es[-1], r[-1], ef[-2], es[-2]): return None, None
-    if ef[-2] <= es[-2] and ef[-1] > es[-1] and r[-1] > 50:
-        return "long", f"EMA Cross RSI {r[-1]:.1f}"
-    if ef[-2] >= es[-2] and ef[-1] < es[-1] and r[-1] < 50:
-        return "short", f"EMA Cross RSI {r[-1]:.1f}"
-    return None, None
-
-def check_order_block(candles, state):
-    if len(candles) < OB_LOOKBACK+5: return None, None
-    bodies = [abs(c["close"]-c["open"]) for c in candles[-OB_LOOKBACK-5:-1]]
-    avg_body = statistics.mean(bodies) if bodies else 1.0
-    last = candles[-1]
-
-    for i in range(len(candles)-3, len(candles)-OB_LOOKBACK-1, -1):
-        c = candles[i]
-        if c["close"] < c["open"]:
-            impulse = any(candles[j]["close"] > candles[j]["open"] and abs(candles[j]["close"]-candles[j]["open"]) > avg_body*OB_IMPULSE_MULT
-                          for j in range(i+1, min(i+3, len(candles)-1)))
-            if impulse and last["low"] <= c["high"] and last["high"] >= c["low"] and is_rejection(last, c["low"], "long"):
-                zone_key = f"OB-long-{round(c['low'],1)}-{round(c['high'],1)}"
-                if zone_already_fired(state, zone_key):
-                    continue
-                mark_zone_fired(state, zone_key)
-                return "long", f"Bullish OB {c['low']:.2f}-{c['high']:.2f}"
-
-    for i in range(len(candles)-3, len(candles)-OB_LOOKBACK-1, -1):
-        c = candles[i]
-        if c["close"] > c["open"]:
-            impulse = any(candles[j]["close"] < candles[j]["open"] and abs(candles[j]["close"]-candles[j]["open"]) > avg_body*OB_IMPULSE_MULT
-                          for j in range(i+1, min(i+3, len(candles)-1)))
-            if impulse and last["low"] <= c["high"] and last["high"] >= c["low"] and is_rejection(last, c["high"], "short"):
-                zone_key = f"OB-short-{round(c['low'],1)}-{round(c['high'],1)}"
-                if zone_already_fired(state, zone_key):
-                    continue
-                mark_zone_fired(state, zone_key)
-                return "short", f"Bearish OB {c['low']:.2f}-{c['high']:.2f}"
-    return None, None
-
-def check_fvg(candles, state):
-    if len(candles) < 8: return None, None
-    last = candles[-1]
-    for i in range(len(candles)-2, max(len(candles)-15, 2), -1):
-        c1, c3 = candles[i-2], candles[i]
-        if c3["low"] > c1["high"] + FVG_MIN_GAP:
-            if last["low"] <= c3["low"] and last["high"] >= c1["high"] and last["close"] > last["open"]:
-                zone_key = f"FVG-long-{round(c1['high'],1)}-{round(c3['low'],1)}"
-                if zone_already_fired(state, zone_key):
-                    continue
-                mark_zone_fired(state, zone_key)
-                return "long", f"Bullish FVG {c1['high']:.2f}-{c3['low']:.2f}"
-        if c3["high"] < c1["low"] - FVG_MIN_GAP:
-            if last["high"] >= c3["high"] and last["low"] <= c1["low"] and last["close"] < last["open"]:
-                zone_key = f"FVG-short-{round(c3['high'],1)}-{round(c1['low'],1)}"
-                if zone_already_fired(state, zone_key):
-                    continue
-                mark_zone_fired(state, zone_key)
-                return "short", f"Bearish FVG {c3['high']:.2f}-{c1['low']:.2f}"
-    return None, None
-
-
-# ============== TELEGRAM ==============
-def send_telegram(msg):
-    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
-        print("[TG] Missing credentials")
-        return
-    try:
-        requests.post(f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage",
-                      data={"chat_id": TELEGRAM_CHAT_ID, "text": msg, "parse_mode": "HTML"}, timeout=12)
-    except Exception as e:
-        print(f"[TG] {e}")
-
-def format_signal(direction, entry, strategy, info, sl, tp, sl_pts, tp_pts, session, bias):
-    arrow = "🟢 BUY" if direction == "long" else "🔴 SELL"
-    return (f"<b>{arrow} XAUUSD (5m)</b>\n"
-            f"Strategy: <b>{strategy}</b>\n"
-            f"Entry: {entry:.2f}\n"
-            f"Info: {info}\n"
-            f"SL: {sl:.2f} ({price_to_points(sl_pts)} points) | TP: {tp:.2f} ({price_to_points(tp_pts)} points)\n"
-            f"Session: {session} | Bias: {bias}\n"
-            f"Time: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
-
-def is_octa_xauusd_open(now_utc):
-    """Return whether Octa's published XAUUSD trading hours are open.
-
-    Octa publishes XAUUSD as Monday-Friday 22:00-21:00 UTC with a
-    one-hour daily recess, with no Saturday trading and Sunday reopening.
-    This gate prevents the bot from generating signals from XAUS weekend
-    spot/chart data when the Octa MT4 XAUUSD market is closed.
-    """
-    weekday = now_utc.weekday()  # Monday=0 ... Sunday=6
-    hour_min = now_utc.hour * 60 + now_utc.minute
-
-    # Saturday: closed all day.
-    if weekday == 5:
-        return False
-
-    # Sunday: closed until the published Sunday reopen at 22:00 UTC.
-    if weekday == 6:
-        return hour_min >= 22 * 60
-
-    # Monday-Friday: daily trading window is 22:00-21:00 UTC.
-    # 21:00-22:00 UTC is the published one-hour recess.
-    return hour_min < 21 * 60 or hour_min >= 22 * 60
-
-
-def can_send(state, strategy, direction):
-    now = time.time()
-    last_t = state.get("last_signal_time", {}).get(strategy, 0)
-    last_d = state.get("last_signal_direction", {}).get(strategy)
-    if now - last_t < COOLDOWN_SECONDS and last_d == direction:
-        return False
-    return True
-
-def record(state, strategy, direction):
-    state.setdefault("last_signal_time", {})[strategy] = time.time()
-    state.setdefault("last_signal_direction", {})[strategy] = direction
-
-
-# ============== MAIN ==============
-def main():
-    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
-        print("ERROR: Missing secrets", file=sys.stderr)
-        sys.exit(1)
-
-    state = load_state()
-    now_utc = datetime.now(timezone.utc)
-
-    # IMPORTANT: XAUS can still provide indicative XAU/USD prices while the
-    # Octa MT4 XAUUSD market is closed. Do not create or evaluate simulated
-    # Octa trades outside Octa's published XAUUSD trading hours.
-    if not is_octa_xauusd_open(now_utc):
-        print(f"[MARKET CLOSED] Octa XAUUSD is closed | {now_utc.strftime('%Y-%m-%d %H:%M:%S UTC')}")
-        print("[SIGNALS] Skipped — no XAUUSD signals will be sent while the market is closed.")
-        save_state(state)
-        return
-
-    candles = get_klines()
-    live_spot = fetch_spot()
-    price = live_spot if live_spot is not None else candles[-1]["close"]
-    session = get_session(now_utc.hour)
-    bias = get_15m_bias(candles)
-
-    check_open_trades(price)
-
-    today = now_utc.date().isoformat()
-    if state.get("last_summary_date") is None:
-        state["last_summary_date"] = today
-    elif today != state["last_summary_date"]:
-        y,m,d = map(int, state["last_summary_date"].split("-"))
-        send_daily_summary(date(y,m,d))
-        state["last_summary_date"] = today
-
-    # Collect raw signals.  Diagnostic status is kept separate from the
-    # trading logic so we can see exactly why each strategy did/didn't send.
-    strategy_names = ["VWAP+VP", "Liquidity Sweep", "EMA+RSI", "Order Block", "FVG"]
-    diagnostics = {name: "NO TRIGGER" for name in strategy_names}
-    raw = []
-
-    vwap = session_vwap(candles)
-    profile = volume_profile(candles[-LOOKBACK_BARS:])
-    d, info = check_vwap_vp(candles, vwap, profile)
-    if d:
-        raw.append(("VWAP+VP", d, info or ""))
-        diagnostics["VWAP+VP"] = f"TRIGGER {d.upper()} ({info or 'no info'})"
-
-    d, info = check_liquidity_sweep(candles)
-    if d:
-        raw.append(("Liquidity Sweep", d, info or ""))
-        diagnostics["Liquidity Sweep"] = f"TRIGGER {d.upper()} ({info or 'no info'})"
-
-    d, info = check_ema_rsi(candles)
-    if d:
-        raw.append(("EMA+RSI", d, info or ""))
-        diagnostics["EMA+RSI"] = f"TRIGGER {d.upper()} ({info or 'no info'})"
-
-    d, info = check_order_block(candles, state)
-    if d:
-        raw.append(("Order Block", d, info or ""))
-        diagnostics["Order Block"] = f"TRIGGER {d.upper()} ({info or 'no info'})"
-
-    d, info = check_fvg(candles, state)
-    if d:
-        raw.append(("FVG", d, info or ""))
-        diagnostics["FVG"] = f"TRIGGER {d.upper()} ({info or 'no info'})"
-
-    # Apply filters.  Update diagnostics so GitHub Actions shows whether a
-    # strategy triggered but was rejected by a filter or was actually sent.
-    final = []
-    for strategy, direction, info in raw:
-        # 15m bias filter
-        if bias == "bullish" and direction == "short":
-            diagnostics[strategy] = f"TRIGGER {direction.upper()} -> FILTERED (15m bias={bias})"
-            continue
-        if bias == "bearish" and direction == "long":
-            diagnostics[strategy] = f"TRIGGER {direction.upper()} -> FILTERED (15m bias={bias})"
-            continue
-
-        # Asian session → stricter (require at least one more confirming strategy of same direction)
-        if session == "Asian":
-            same_dir = [s for s,d,i in raw if d == direction]
-            if len(same_dir) < 2:
-                diagnostics[strategy] = f"TRIGGER {direction.upper()} -> FILTERED (Asian confluence)"
-                continue
-
-        if not can_send(state, strategy, direction):
-            diagnostics[strategy] = f"TRIGGER {direction.upper()} -> FILTERED (cooldown)"
-            continue
-
-        final.append((strategy, direction, info))
-        diagnostics[strategy] = f"TRIGGER {direction.upper()} -> SENT"
-
-    # Print a per-strategy diagnostic block for GitHub Actions.  Python's
-    # standard logging/console output is appropriate here because the action
-    # log is our diagnostic destination.
-    print("[STRATEGY CHECK]")
-    for strategy in strategy_names:
-        print(f"  {strategy:<17} {diagnostics[strategy]}")
-
-    # Send
-    for strategy, direction, info in final:
-        risk = STRATEGY_RISK[strategy]
-        sl_pts, tp_pts = risk["sl"], risk["tp"]
-        if direction == "long":
-            sl = round(price - sl_pts, 2)
-            tp = round(price + tp_pts, 2)
-        else:
-            sl = round(price + sl_pts, 2)
-            tp = round(price - tp_pts, 2)
-
-        msg = format_signal(direction, price, strategy, info, sl, tp, sl_pts, tp_pts, session, bias)
-        send_telegram(msg)
-        open_trade(direction, price, sl, tp, strategy, info)
-        record(state, strategy, direction)
-        print(f"[SIGNAL] {strategy} {direction.upper()} @ {price:.2f} | {session} | {bias}")
-
-    if not final:
-        print(f"[{now_utc.strftime('%H:%M:%S')}] No signals | Session={session} Bias={bias}")
-
-    # Prune stale zone entries so state.json doesn't grow forever
-    now_ts = time.time()
-    state["zone_last_fired"] = {
-        k: v for k, v in state.get("zone_last_fired", {}).items()
-        if now_ts - v < ZONE_DEDUP_SECONDS
-    }
-
-    save_state(state)
-
-
-if __name__ == "__main__":
-    main()
+    current_price = hourly_closes[-1]
+    if current_price > e_1h[-1]:
+        return "bullish"
+    elif current_price < e_1h[-1]:
+        return "bearish"
