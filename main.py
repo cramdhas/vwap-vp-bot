@@ -282,8 +282,6 @@ def send_daily_summary(for_date):
     lines = "\n".join(f"• {s}: {v['w']}W/{v['l']}L | {v['pts']:+d} pts" for s, v in by.items())
     send_telegram(f"<b>📊 Daily Summary — {day_str}</b>\n"
                   f"Total: {len(day_trades)} | {len(wins)}W/{len(losses)}L | WR {wr:.1f}% | Net {int(total):+d} points\n\n{lines}")
-
-
 # ============== DATA ==============
 def fetch_xaus_json(path, params=None, timeout=15):
     """Fetch free XAU/USD data from XAUS (no API key)."""
