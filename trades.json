@@ -9,7 +9,8 @@
     "status": "closed",
     "closed_at": "2026-09-14T17:07:07.451974+00:00",
     "result": "loss",
-    "pnl_points": -6.0
+    "pnl_points": -6.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -23,7 +24,8 @@
     "closed_at": "2026-09-17T18:31:19.773310+00:00",
     "result": "loss",
     "pnl_points": -8,
-    "pnl_price": -8.0
+    "pnl_price": -8.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -37,7 +39,8 @@
     "closed_at": "2026-09-18T00:25:38.040663+00:00",
     "result": "win",
     "pnl_points": 10,
-    "pnl_price": 10.0
+    "pnl_price": 10.0,
+    "tp1_hit": false
   },
   {
     "direction": "short",
@@ -51,7 +54,8 @@
     "closed_at": "2026-09-18T09:10:57.530112+00:00",
     "result": "loss",
     "pnl_points": -8,
-    "pnl_price": -8.0
+    "pnl_price": -8.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -65,7 +69,8 @@
     "closed_at": "2026-09-18T09:35:39.248551+00:00",
     "result": "loss",
     "pnl_points": -8,
-    "pnl_price": -8.0
+    "pnl_price": -8.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -79,7 +84,8 @@
     "closed_at": "2026-09-18T16:21:00.228465+00:00",
     "result": "win",
     "pnl_points": 10,
-    "pnl_price": 10.0
+    "pnl_price": 10.0,
+    "tp1_hit": false
   },
   {
     "direction": "short",
@@ -89,10 +95,11 @@
     "strategy": "EMA+RSI",
     "level": "EMA Cross RSI 45.7",
     "opened_at": "2026-09-18T19:05:45.230881+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263420+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -102,10 +109,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T08:40:58.367582+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263432+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -115,10 +123,11 @@
     "strategy": "Order Block",
     "level": "Bullish OB 4417.20-4420.20",
     "opened_at": "2026-09-19T08:40:59.007752+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263437+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -128,10 +137,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T08:45:51.681954+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263440+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -141,10 +151,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T08:50:52.625633+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263442+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -154,10 +165,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T08:55:39.174572+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263445+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -167,10 +179,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T09:01:25.277653+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263447+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -180,10 +193,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T09:05:42.830134+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263450+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -193,10 +207,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T09:10:59.910468+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263452+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -206,10 +221,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T09:15:53.132422+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263454+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -219,10 +235,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T09:20:58.786062+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263457+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -232,10 +249,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T09:25:39.274481+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263459+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -245,10 +263,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T09:31:11.895867+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263461+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -258,10 +277,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T09:35:42.056065+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263464+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -271,10 +291,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T09:40:53.462468+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263466+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -284,10 +305,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T09:45:48.187982+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263469+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -297,10 +319,11 @@
     "strategy": "Order Block",
     "level": "Bullish OB 4417.20-4420.20",
     "opened_at": "2026-09-19T09:45:48.704857+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263471+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -310,10 +333,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T09:50:52.266330+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263474+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -323,10 +347,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T09:55:38.183292+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263476+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -336,10 +361,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T10:01:26.632378+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263478+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -349,10 +375,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T10:05:37.656454+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263480+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -362,10 +389,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T10:10:53.497748+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263483+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -375,10 +403,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T10:15:48.183962+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263485+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -388,10 +417,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T10:20:50.870615+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263490+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -401,10 +431,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T10:25:39.166376+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263493+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -414,10 +445,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T10:31:15.378959+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263495+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -427,10 +459,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T10:35:39.050711+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263497+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -440,10 +473,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T10:40:53.514292+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263500+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -453,10 +487,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T10:45:47.563972+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263503+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -466,10 +501,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T10:50:51.238144+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263505+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -479,10 +515,11 @@
     "strategy": "Order Block",
     "level": "Bullish OB 4417.20-4420.20",
     "opened_at": "2026-09-19T10:50:51.699809+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263508+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -492,10 +529,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T10:55:35.536444+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263510+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -505,10 +543,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T11:01:31.070932+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263512+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -518,10 +557,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T11:05:43.341679+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263514+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -531,10 +571,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T11:10:59.266397+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263517+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -544,10 +585,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T11:15:55.350799+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263519+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -557,10 +599,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T11:20:57.392219+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263521+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -570,10 +613,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T11:25:40.711190+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263524+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -583,10 +627,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T11:31:13.128883+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263526+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -596,10 +641,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T11:35:41.279947+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263528+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -609,10 +655,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T11:40:56.969345+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263531+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -622,10 +669,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T11:45:55.714178+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263533+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -635,10 +683,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T11:50:59.181710+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263535+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -648,10 +697,11 @@
     "strategy": "Order Block",
     "level": "Bullish OB 4417.20-4420.20",
     "opened_at": "2026-09-19T11:50:59.774231+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263538+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -661,10 +711,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T11:55:38.374285+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263540+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -674,10 +725,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T12:01:29.532929+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263542+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -687,10 +739,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T12:05:45.635430+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263545+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -700,10 +753,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T12:10:54.073522+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263547+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -713,10 +767,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T12:15:57.683704+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263549+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -726,10 +781,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T12:21:00.248219+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263552+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -739,10 +795,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T12:25:38.591788+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263554+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -752,10 +809,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T12:31:13.958686+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263557+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -765,10 +823,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T12:36:02.535378+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263559+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -778,10 +837,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T12:40:51.648727+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263561+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -791,10 +851,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T12:45:50.049662+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263563+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -804,10 +865,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T12:50:56.441717+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263566+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -817,10 +879,11 @@
     "strategy": "VWAP+VP",
     "level": "VAH",
     "opened_at": "2026-09-19T12:55:38.371855+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263569+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   },
   {
     "direction": "long",
@@ -830,9 +893,10 @@
     "strategy": "Order Block",
     "level": "Bullish OB 4417.20-4420.20",
     "opened_at": "2026-09-19T12:55:39.029008+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": null
+    "status": "closed",
+    "closed_at": "2026-09-21T00:17:05.263571+00:00",
+    "result": "invalid_legacy",
+    "pnl_points": 0.0,
+    "tp1_hit": false
   }
 ]

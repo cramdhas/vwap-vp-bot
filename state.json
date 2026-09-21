@@ -13,8 +13,6 @@
     "Order Block": "long",
     "FVG": "short"
   },
-  "last_summary_date": "2026-09-19",
-  "zone_last_fired": {
-    "OB-long-4417.2-4420.2": 1789822537.6434243
-  }
+  "last_summary_date": "2026-09-21",
+  "zone_last_fired": {}
 }
