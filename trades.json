@@ -918,18 +918,18 @@
   {
     "direction": "short",
     "entry": 4364.100098,
-    "sl_price": 4370.1,
+    "sl_price": 4363.6,
     "original_sl": 4370.1,
     "tp1_price": 4359.6,
     "tp2_price": 4356.1,
-    "tp1_hit": false,
+    "tp1_hit": true,
     "strategy": "SMA6",
     "level": "SMA6 Cross Down 4403.90",
     "opened_at": "2026-09-21T03:15:50.492686+00:00",
     "status": "open",
     "closed_at": null,
     "result": null,
-    "pnl_points": 0.0
+    "pnl_points": 2.0
   },
   {
     "direction": "short",
@@ -946,5 +946,21 @@
     "closed_at": "2026-09-21T03:40:54.956073+00:00",
     "result": "loss",
     "pnl_points": -6
+  },
+  {
+    "direction": "short",
+    "entry": 4359.299805,
+    "sl_price": 4368.18,
+    "original_sl": 4368.18,
+    "tp1_price": 4352.64,
+    "tp2_price": 4348.2,
+    "tp1_hit": false,
+    "strategy": "SMA6",
+    "level": "SMA6 Cross Down 4411.78",
+    "opened_at": "2026-09-21T04:05:42.690788+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0
   }
 ]
