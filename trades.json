@@ -1214,25 +1214,25 @@
     "strategy": "EMA+RSI",
     "level": "EMA Cross RSI 46.0",
     "opened_at": "2026-09-22T14:15:56.190611+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 3.0
+    "status": "closed",
+    "closed_at": "2026-09-22T14:45:57.045891+00:00",
+    "result": "win",
+    "pnl_points": 8.0
   },
   {
     "direction": "short",
     "entry": 4329.899902,
-    "sl_price": 4337.73,
+    "sl_price": 4329.4,
     "original_sl": 4337.73,
     "tp1_price": 4324.03,
     "tp2_price": 4320.11,
-    "tp1_hit": false,
+    "tp1_hit": true,
     "strategy": "EMA+RSI",
     "level": "EMA Cross RSI 48.8",
     "opened_at": "2026-09-22T14:21:04.001065+00:00",
     "status": "open",
     "closed_at": null,
     "result": null,
-    "pnl_points": 0.0
+    "pnl_points": 3.0
   }
 ]
