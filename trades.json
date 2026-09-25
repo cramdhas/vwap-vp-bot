@@ -1806,10 +1806,10 @@
     "strategy": "MA2/148 Cross",
     "level": "MA2/148 Touch Up @ 4294.20 (MA148 4323.67)",
     "opened_at": "2026-09-25T18:50:58.740190+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-25T20:40:53.892795+00:00",
+    "result": "loss",
+    "pnl_points": -7
   },
   {
     "direction": "long",
@@ -1822,9 +1822,9 @@
     "strategy": "MA2/148 Cross",
     "level": "MA2/148 Touch Up @ 4294.00 (MA148 4324.82)",
     "opened_at": "2026-09-25T19:40:59.487926+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-25T20:40:54.535747+00:00",
+    "result": "loss",
+    "pnl_points": -7
   }
 ]
