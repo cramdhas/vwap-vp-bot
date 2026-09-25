@@ -1742,9 +1742,9 @@
     "strategy": "MA2/148 Cross",
     "level": "MA2/148 Touch Down @ 4285.60 (MA148 4320.65)",
     "opened_at": "2026-09-25T16:55:42.464770+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-25T17:10:57.090506+00:00",
+    "result": "loss",
+    "pnl_points": -7
   }
 ]
