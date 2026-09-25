@@ -1534,10 +1534,10 @@
     "strategy": "MA2/148 Cross",
     "level": "MA2/148 Touch Down @ 4282.20 (MA148 4309.90)",
     "opened_at": "2026-09-25T08:22:08.629680+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-25T08:35:37.749854+00:00",
+    "result": "loss",
+    "pnl_points": -7
   },
   {
     "direction": "short",
@@ -1550,10 +1550,10 @@
     "strategy": "MA2/148 Cross",
     "level": "MA2/148 Touch Down @ 4282.50 (MA148 4310.06)",
     "opened_at": "2026-09-25T08:25:42.975499+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-25T08:35:38.273642+00:00",
+    "result": "loss",
+    "pnl_points": -7
   },
   {
     "direction": "short",
@@ -1582,6 +1582,22 @@
     "strategy": "MA2/148 Cross",
     "level": "MA2/148 Touch Down @ 4287.50 (MA148 4310.08)",
     "opened_at": "2026-09-25T08:34:01.596516+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0
+  },
+  {
+    "direction": "short",
+    "entry": 4290.299805,
+    "sl_price": 4297.3,
+    "original_sl": 4297.3,
+    "tp1_price": 4283.3,
+    "tp2_price": 4279.3,
+    "tp1_hit": false,
+    "strategy": "MA2/148 Cross",
+    "level": "MA2/148 Touch Down @ 4290.30 (MA148 4310.09)",
+    "opened_at": "2026-09-25T08:35:39.283915+00:00",
     "status": "open",
     "closed_at": null,
     "result": null,
