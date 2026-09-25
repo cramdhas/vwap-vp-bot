@@ -1510,17 +1510,17 @@
   {
     "direction": "long",
     "entry": 4276.700195,
-    "sl_price": 4270.7,
+    "sl_price": 4277.2,
     "original_sl": 4270.7,
     "tp1_price": 4281.2,
     "tp2_price": 4284.7,
-    "tp1_hit": false,
+    "tp1_hit": true,
     "strategy": "SMA6",
     "level": "SMA6 Cross Up 4310.15",
     "opened_at": "2026-09-25T07:35:45.036906+00:00",
     "status": "open",
     "closed_at": null,
     "result": null,
-    "pnl_points": 0.0
+    "pnl_points": 2.0
   }
 ]
