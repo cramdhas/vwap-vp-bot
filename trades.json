@@ -1326,10 +1326,10 @@
     "strategy": "Liquidity Sweep",
     "level": "Sweep Low 4284.39",
     "opened_at": "2026-09-25T02:46:09.766154+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-25T03:31:29.795201+00:00",
+    "result": "loss",
+    "pnl_points": -6
   },
   {
     "direction": "long",
@@ -1342,10 +1342,10 @@
     "strategy": "Order Block",
     "level": "Bullish OB 4279.17",
     "opened_at": "2026-09-25T03:11:22.550161+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-25T03:31:30.292152+00:00",
+    "result": "loss",
+    "pnl_points": -6
   },
   {
     "direction": "long",
@@ -1358,9 +1358,9 @@
     "strategy": "SMA6",
     "level": "SMA6 Cross Up 4283.77",
     "opened_at": "2026-09-25T03:11:23.101311+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-25T03:31:30.762539+00:00",
+    "result": "loss",
+    "pnl_points": -6
   }
 ]
