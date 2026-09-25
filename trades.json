@@ -1682,5 +1682,21 @@
     "closed_at": "2026-09-25T10:10:59.335803+00:00",
     "result": "loss",
     "pnl_points": -7
+  },
+  {
+    "direction": "long",
+    "entry": 4303.399902,
+    "sl_price": 4297.4,
+    "original_sl": 4297.4,
+    "tp1_price": 4307.9,
+    "tp2_price": 4311.4,
+    "tp1_hit": false,
+    "strategy": "EMA+RSI",
+    "level": "EMA Cross RSI 55.1",
+    "opened_at": "2026-09-25T12:40:58.382440+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0
   }
 ]
