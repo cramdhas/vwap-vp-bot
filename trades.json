@@ -1314,5 +1314,21 @@
     "closed_at": "2026-09-23T11:31:18.817662+00:00",
     "result": "win",
     "pnl_points": 6.0
+  },
+  {
+    "direction": "long",
+    "entry": 4287.0,
+    "sl_price": 4281.0,
+    "original_sl": 4281.0,
+    "tp1_price": 4291.8,
+    "tp2_price": 4295.1,
+    "tp1_hit": false,
+    "strategy": "Liquidity Sweep",
+    "level": "Sweep Low 4284.39",
+    "opened_at": "2026-09-25T02:46:09.766154+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0
   }
 ]
