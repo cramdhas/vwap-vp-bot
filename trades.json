@@ -1486,10 +1486,10 @@
     "strategy": "EMA+RSI",
     "level": "EMA Cross RSI 56.8",
     "opened_at": "2026-09-25T06:16:15.525569+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 2.0
+    "status": "closed",
+    "closed_at": "2026-09-25T08:31:15.915856+00:00",
+    "result": "win",
+    "pnl_points": 6.0
   },
   {
     "direction": "long",
@@ -1502,10 +1502,10 @@
     "strategy": "SMA6",
     "level": "SMA6 Cross Up 4270.38",
     "opened_at": "2026-09-25T06:16:16.075636+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 2.0
+    "status": "closed",
+    "closed_at": "2026-09-25T08:31:16.493738+00:00",
+    "result": "win",
+    "pnl_points": 6.0
   },
   {
     "direction": "long",
@@ -1518,10 +1518,10 @@
     "strategy": "SMA6",
     "level": "SMA6 Cross Up 4310.15",
     "opened_at": "2026-09-25T07:35:45.036906+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 2.0
+    "status": "closed",
+    "closed_at": "2026-09-25T08:31:17.013832+00:00",
+    "result": "win",
+    "pnl_points": 6.0
   },
   {
     "direction": "short",
@@ -1550,6 +1550,22 @@
     "strategy": "MA2/148 Cross",
     "level": "MA2/148 Touch Down @ 4282.50 (MA148 4310.06)",
     "opened_at": "2026-09-25T08:25:42.975499+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0
+  },
+  {
+    "direction": "short",
+    "entry": 4285.299805,
+    "sl_price": 4292.3,
+    "original_sl": 4292.3,
+    "tp1_price": 4278.3,
+    "tp2_price": 4274.3,
+    "tp1_hit": false,
+    "strategy": "MA2/148 Cross",
+    "level": "MA2/148 Touch Down @ 4285.30 (MA148 4310.08)",
+    "opened_at": "2026-09-25T08:31:18.054162+00:00",
     "status": "open",
     "closed_at": null,
     "result": null,
