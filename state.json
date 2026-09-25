@@ -16,7 +16,5 @@
     "SMA6": "long"
   },
   "last_summary_date": "2026-09-25",
-  "zone_last_fired": {
-    "OB-long-4279.2": 1790305881.9589798
-  }
+  "zone_last_fired": {}
 }
