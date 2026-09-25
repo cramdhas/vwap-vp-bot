@@ -1478,34 +1478,34 @@
   {
     "direction": "long",
     "entry": 4275.799805,
-    "sl_price": 4269.73,
+    "sl_price": 4276.3,
     "original_sl": 4269.73,
     "tp1_price": 4280.35,
     "tp2_price": 4283.8,
-    "tp1_hit": false,
+    "tp1_hit": true,
     "strategy": "EMA+RSI",
     "level": "EMA Cross RSI 56.8",
     "opened_at": "2026-09-25T06:16:15.525569+00:00",
     "status": "open",
     "closed_at": null,
     "result": null,
-    "pnl_points": 0.0
+    "pnl_points": 2.0
   },
   {
     "direction": "long",
     "entry": 4275.799805,
-    "sl_price": 4269.73,
+    "sl_price": 4276.3,
     "original_sl": 4269.73,
     "tp1_price": 4280.35,
     "tp2_price": 4283.8,
-    "tp1_hit": false,
+    "tp1_hit": true,
     "strategy": "SMA6",
     "level": "SMA6 Cross Up 4270.38",
     "opened_at": "2026-09-25T06:16:16.075636+00:00",
     "status": "open",
     "closed_at": null,
     "result": null,
-    "pnl_points": 0.0
+    "pnl_points": 2.0
   },
   {
     "direction": "long",
