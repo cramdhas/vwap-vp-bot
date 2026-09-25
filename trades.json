@@ -1390,10 +1390,10 @@
     "strategy": "VWAP+VP",
     "level": "POC",
     "opened_at": "2026-09-25T05:51:15.067377+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-25T06:21:13.834203+00:00",
+    "result": "loss",
+    "pnl_points": -6
   },
   {
     "direction": "short",
@@ -1406,10 +1406,10 @@
     "strategy": "Order Block",
     "level": "Bearish OB 4273.50",
     "opened_at": "2026-09-25T05:51:15.767418+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-25T06:21:14.383991+00:00",
+    "result": "loss",
+    "pnl_points": -6
   },
   {
     "direction": "short",
