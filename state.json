@@ -4,8 +4,8 @@
     "Liquidity Sweep": 1790304369.7673712,
     "EMA+RSI": 1790141737.2858465,
     "Order Block": 1790315475.768842,
-    "FVG": 1790316114.1559906,
-    "SMA6": 1790305883.1025503
+    "FVG": 1790316672.9887166,
+    "SMA6": 1790316673.6758773
   },
   "last_signal_direction": {
     "VWAP+VP": "short",
@@ -13,12 +13,13 @@
     "EMA+RSI": "short",
     "Order Block": "short",
     "FVG": "short",
-    "SMA6": "long"
+    "SMA6": "short"
   },
   "last_summary_date": "2026-09-25",
   "zone_last_fired": {
     "OB-short-4273.5": 1790315474.3378997,
     "FVG-short-4269.7": 1790315757.264651,
-    "FVG-short-4263.8": 1790316113.536215
+    "FVG-short-4263.8": 1790316113.536215,
+    "FVG-short-4270.0": 1790316672.2144482
   }
 }
