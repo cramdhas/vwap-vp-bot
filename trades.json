@@ -1698,5 +1698,21 @@
     "closed_at": "2026-09-25T13:05:41.497884+00:00",
     "result": "loss",
     "pnl_points": -6
+  },
+  {
+    "direction": "short",
+    "entry": 4281.700195,
+    "sl_price": 4288.7,
+    "original_sl": 4288.7,
+    "tp1_price": 4274.7,
+    "tp2_price": 4270.7,
+    "tp1_hit": false,
+    "strategy": "MA2/148 Cross",
+    "level": "MA2/148 Touch Down @ 4281.70 (MA148 4321.73)",
+    "opened_at": "2026-09-25T13:35:42.366136+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0
   }
 ]
