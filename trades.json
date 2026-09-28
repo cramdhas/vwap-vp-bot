@@ -2446,10 +2446,10 @@
     "strategy": "FVG",
     "level": "Bearish FVG 4120.14",
     "opened_at": "2026-09-28T15:16:15.538648+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-28T16:21:23.986209+00:00",
+    "result": "loss",
+    "pnl_points": -7
   },
   {
     "direction": "short",
@@ -2462,10 +2462,10 @@
     "strategy": "Doji",
     "level": "Doji @ 4120.90 (SMA50 4142.86, range 4.25)",
     "opened_at": "2026-09-28T15:41:11.388251+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-28T16:21:24.561183+00:00",
+    "result": "loss",
+    "pnl_points": -7
   },
   {
     "direction": "short",
@@ -2494,9 +2494,9 @@
     "strategy": "SMA6",
     "level": "SMA6 Cross Down 4120.27",
     "opened_at": "2026-09-28T16:16:12.948267+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-28T16:21:25.152378+00:00",
+    "result": "loss",
+    "pnl_points": -6
   }
 ]
