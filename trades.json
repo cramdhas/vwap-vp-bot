@@ -2238,9 +2238,9 @@
     "strategy": "VWAP+VP",
     "level": "POC",
     "opened_at": "2026-09-28T12:41:11.784046+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
+    "status": "closed",
+    "closed_at": "2026-09-28T13:46:16.908655+00:00",
+    "result": "win",
     "pnl_points": 3.0
   },
   {
@@ -2254,9 +2254,9 @@
     "strategy": "MA3/25 Cross",
     "level": "MA3/25 Touch Down @ 4148.60 (MA25 4154.63, slope -0.19)",
     "opened_at": "2026-09-28T12:41:12.259293+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
+    "status": "closed",
+    "closed_at": "2026-09-28T13:46:17.676523+00:00",
+    "result": "win",
     "pnl_points": 4.0
   },
   {
@@ -2270,9 +2270,9 @@
     "strategy": "EMA+RSI",
     "level": "EMA Cross RSI 37.3",
     "opened_at": "2026-09-28T12:46:11.830671+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
+    "status": "closed",
+    "closed_at": "2026-09-28T13:46:18.333862+00:00",
+    "result": "win",
     "pnl_points": 3.0
   },
   {
@@ -2286,9 +2286,9 @@
     "strategy": "FVG",
     "level": "Bearish FVG 4153.00",
     "opened_at": "2026-09-28T13:06:00.387656+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
+    "status": "closed",
+    "closed_at": "2026-09-28T13:46:19.055266+00:00",
+    "result": "win",
     "pnl_points": 4.0
   },
   {
