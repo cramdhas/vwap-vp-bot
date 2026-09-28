@@ -1830,17 +1830,17 @@
   {
     "direction": "short",
     "entry": 4235.799805,
-    "sl_price": 4242.83,
+    "sl_price": 4235.3,
     "original_sl": 4242.83,
     "tp1_price": 4230.18,
     "tp2_price": 4226.66,
-    "tp1_hit": false,
+    "tp1_hit": true,
     "strategy": "FVG",
     "level": "Bearish FVG 4238.33",
     "opened_at": "2026-09-28T00:51:08.645522+00:00",
     "status": "open",
     "closed_at": null,
     "result": null,
-    "pnl_points": 0.0
+    "pnl_points": 3.0
   }
 ]
