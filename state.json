@@ -7,7 +7,8 @@
     "FVG": 1790577970.0713992,
     "SMA6": 1790586107.4500084,
     "MA2/148 Cross": 1790365259.4894884,
-    "SMA18 Touch": 1790570503.1512177
+    "SMA18 Touch": 1790570503.1512177,
+    "Doji": 1790589710.7330694
   },
   "last_signal_direction": {
     "VWAP+VP": "short",
@@ -17,11 +18,13 @@
     "FVG": "short",
     "SMA6": "short",
     "MA2/148 Cross": "long",
-    "SMA18 Touch": "short"
+    "SMA18 Touch": "short",
+    "Doji": "short"
   },
   "last_summary_date": "2026-09-28",
   "zone_last_fired": {
     "OB-long-4141.1": 1790588476.442627
   },
-  "last_weekly_summary_date": "2026-09-26"
+  "last_weekly_summary_date": "2026-09-26",
+  "last_doji_candle": 1790589300000
 }

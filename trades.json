@@ -2066,5 +2066,21 @@
     "closed_at": "2026-09-28T09:51:11.246677+00:00",
     "result": "loss",
     "pnl_points": -7
+  },
+  {
+    "direction": "short",
+    "entry": 4157.700195,
+    "sl_price": 4164.7,
+    "original_sl": 4164.7,
+    "tp1_price": 4150.7,
+    "tp2_price": 4146.7,
+    "tp1_hit": false,
+    "strategy": "Doji",
+    "level": "Doji @ 4157.70 (SMA50 4158.57, range 2.85)",
+    "opened_at": "2026-09-28T10:01:50.731238+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0
   }
 ]
