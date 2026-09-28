@@ -3,13 +3,14 @@
     "VWAP+VP": 1790315475.0686195,
     "Liquidity Sweep": 1790304369.7673712,
     "EMA+RSI": 1790594173.5619874,
-    "Order Block": 1790582510.8502817,
+    "Order Block": 1790595401.3900955,
     "FVG": 1790594174.2046459,
     "SMA6": 1790593310.3180366,
     "MA2/148 Cross": 1790365259.4894884,
-    "SMA18 Touch": 1790570503.1512177,
+    "SMA18 Touch": 1790595402.3477578,
     "Doji": 1790589710.7330694,
-    "MA4/45 Pullback": 1790590278.0490167
+    "MA4/45 Pullback": 1790590278.0490167,
+    "MA3/25 Cross": 1790595401.867326
   },
   "last_signal_direction": {
     "VWAP+VP": "short",
@@ -21,11 +22,13 @@
     "MA2/148 Cross": "long",
     "SMA18 Touch": "short",
     "Doji": "short",
-    "MA4/45 Pullback": "short"
+    "MA4/45 Pullback": "short",
+    "MA3/25 Cross": "long"
   },
   "last_summary_date": "2026-09-28",
   "zone_last_fired": {
-    "FVG-short-4152.9": 1790594172.847493
+    "FVG-short-4152.9": 1790594172.847493,
+    "OB-short-4158.0": 1790595400.8029811
   },
   "last_weekly_summary_date": "2026-09-26",
   "last_doji_candle": 1790589300000
