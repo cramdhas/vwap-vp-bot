@@ -2222,9 +2222,41 @@
     "strategy": "Liquidity Sweep",
     "level": "Sweep High 4169.12",
     "opened_at": "2026-09-28T12:26:00.363839+00:00",
+    "status": "closed",
+    "closed_at": "2026-09-28T12:41:10.708619+00:00",
+    "result": "win",
+    "pnl_points": 8.0
+  },
+  {
+    "direction": "short",
+    "entry": 4148.600098,
+    "sl_price": 4156.09,
+    "original_sl": 4156.09,
+    "tp1_price": 4142.98,
+    "tp2_price": 4139.24,
+    "tp1_hit": false,
+    "strategy": "VWAP+VP",
+    "level": "POC",
+    "opened_at": "2026-09-28T12:41:11.784046+00:00",
     "status": "open",
     "closed_at": null,
     "result": null,
-    "pnl_points": 3.0
+    "pnl_points": 0.0
+  },
+  {
+    "direction": "short",
+    "entry": 4148.600098,
+    "sl_price": 4155.6,
+    "original_sl": 4155.6,
+    "tp1_price": 4141.6,
+    "tp2_price": 4137.6,
+    "tp1_hit": false,
+    "strategy": "MA3/25 Cross",
+    "level": "MA3/25 Touch Down @ 4148.60 (MA25 4154.63, slope -0.19)",
+    "opened_at": "2026-09-28T12:41:12.259293+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0
   }
 ]
