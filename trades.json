@@ -2082,5 +2082,21 @@
     "closed_at": null,
     "result": null,
     "pnl_points": 0.0
+  },
+  {
+    "direction": "short",
+    "entry": 4158.100098,
+    "sl_price": 4166.1,
+    "original_sl": 4166.1,
+    "tp1_price": 4150.1,
+    "tp2_price": 4147.1,
+    "tp1_hit": false,
+    "strategy": "MA4/45 Pullback",
+    "level": "MA4/45 Pullback (touch 1 bar ago)",
+    "opened_at": "2026-09-28T10:11:18.047181+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0
   }
 ]

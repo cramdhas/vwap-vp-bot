@@ -8,7 +8,8 @@
     "SMA6": 1790586107.4500084,
     "MA2/148 Cross": 1790365259.4894884,
     "SMA18 Touch": 1790570503.1512177,
-    "Doji": 1790589710.7330694
+    "Doji": 1790589710.7330694,
+    "MA4/45 Pullback": 1790590278.0490167
   },
   "last_signal_direction": {
     "VWAP+VP": "short",
@@ -19,7 +20,8 @@
     "SMA6": "short",
     "MA2/148 Cross": "long",
     "SMA18 Touch": "short",
-    "Doji": "short"
+    "Doji": "short",
+    "MA4/45 Pullback": "short"
   },
   "last_summary_date": "2026-09-28",
   "zone_last_fired": {
