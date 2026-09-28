@@ -2078,9 +2078,9 @@
     "strategy": "Doji",
     "level": "Doji @ 4157.70 (SMA50 4158.57, range 2.85)",
     "opened_at": "2026-09-28T10:01:50.731238+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
+    "status": "closed",
+    "closed_at": "2026-09-28T12:06:00.942678+00:00",
+    "result": "win",
     "pnl_points": 4.0
   },
   {
@@ -2110,9 +2110,9 @@
     "strategy": "SMA6",
     "level": "SMA6 Cross Down 4156.85",
     "opened_at": "2026-09-28T11:01:50.316184+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
+    "status": "closed",
+    "closed_at": "2026-09-28T12:06:01.502442+00:00",
+    "result": "win",
     "pnl_points": 2.0
   },
   {
@@ -2126,10 +2126,10 @@
     "strategy": "EMA+RSI",
     "level": "EMA Cross RSI 42.3",
     "opened_at": "2026-09-28T11:16:13.560115+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-28T12:06:02.050857+00:00",
+    "result": "loss",
+    "pnl_points": -6
   },
   {
     "direction": "short",
@@ -2142,10 +2142,10 @@
     "strategy": "FVG",
     "level": "Bearish FVG 4152.85",
     "opened_at": "2026-09-28T11:16:14.202651+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-28T12:06:02.675147+00:00",
+    "result": "loss",
+    "pnl_points": -6
   },
   {
     "direction": "short",
@@ -2206,9 +2206,9 @@
     "strategy": "VWAP+VP",
     "level": "POC",
     "opened_at": "2026-09-28T12:01:53.499243+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-28T12:06:03.199624+00:00",
+    "result": "loss",
+    "pnl_points": -6
   }
 ]
