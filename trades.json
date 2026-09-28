@@ -2278,49 +2278,49 @@
   {
     "direction": "short",
     "entry": 4150.799805,
-    "sl_price": 4159.99,
+    "sl_price": 4150.3,
     "original_sl": 4159.99,
     "tp1_price": 4143.45,
     "tp2_price": 4138.85,
-    "tp1_hit": false,
+    "tp1_hit": true,
     "strategy": "FVG",
     "level": "Bearish FVG 4153.00",
     "opened_at": "2026-09-28T13:06:00.387656+00:00",
     "status": "open",
     "closed_at": null,
     "result": null,
-    "pnl_points": 0.0
+    "pnl_points": 4.0
   },
   {
     "direction": "short",
     "entry": 4150.799805,
-    "sl_price": 4159.28,
+    "sl_price": 4150.3,
     "original_sl": 4159.28,
     "tp1_price": 4144.44,
     "tp2_price": 4140.2,
-    "tp1_hit": false,
+    "tp1_hit": true,
     "strategy": "SMA6",
     "level": "SMA6 Cross Down 4149.31",
     "opened_at": "2026-09-28T13:06:00.892014+00:00",
     "status": "open",
     "closed_at": null,
     "result": null,
-    "pnl_points": 0.0
+    "pnl_points": 3.0
   },
   {
     "direction": "short",
     "entry": 4150.799805,
-    "sl_price": 4157.8,
+    "sl_price": 4150.3,
     "original_sl": 4157.8,
     "tp1_price": 4143.8,
     "tp2_price": 4139.8,
-    "tp1_hit": false,
+    "tp1_hit": true,
     "strategy": "SMA18 Touch",
     "level": "SMA18 Touch Down @ 4150.80 (SMA18 4153.50, slope -0.14)",
     "opened_at": "2026-09-28T13:06:01.391868+00:00",
     "status": "open",
     "closed_at": null,
     "result": null,
-    "pnl_points": 0.0
+    "pnl_points": 3.0
   }
 ]
