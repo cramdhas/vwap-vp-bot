@@ -2114,5 +2114,37 @@
     "closed_at": null,
     "result": null,
     "pnl_points": 2.0
+  },
+  {
+    "direction": "short",
+    "entry": 4151.0,
+    "sl_price": 4157.0,
+    "original_sl": 4157.0,
+    "tp1_price": 4146.5,
+    "tp2_price": 4143.0,
+    "tp1_hit": false,
+    "strategy": "EMA+RSI",
+    "level": "EMA Cross RSI 42.3",
+    "opened_at": "2026-09-28T11:16:13.560115+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0
+  },
+  {
+    "direction": "short",
+    "entry": 4151.0,
+    "sl_price": 4157.0,
+    "original_sl": 4157.0,
+    "tp1_price": 4146.2,
+    "tp2_price": 4143.0,
+    "tp1_hit": false,
+    "strategy": "FVG",
+    "level": "Bearish FVG 4152.85",
+    "opened_at": "2026-09-28T11:16:14.202651+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0
   }
 ]
