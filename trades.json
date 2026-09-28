@@ -2478,10 +2478,10 @@
     "strategy": "SMA18 Touch",
     "level": "SMA18 Touch Down @ 4124.00 (SMA18 4121.70, slope -1.07)",
     "opened_at": "2026-09-28T16:09:13.902652+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-28T16:26:03.563673+00:00",
+    "result": "loss",
+    "pnl_points": -7
   },
   {
     "direction": "short",
