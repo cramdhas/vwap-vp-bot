@@ -4,7 +4,7 @@
     "Liquidity Sweep": 1790598360.3657613,
     "EMA+RSI": 1790604611.5296876,
     "Order Block": 1790613667.9923172,
-    "FVG": 1790608575.5407317,
+    "FVG": 1790614907.175573,
     "SMA6": 1790612172.950482,
     "MA2/148 Cross": 1790365259.4894884,
     "SMA18 Touch": 1790611753.9047918,
@@ -28,10 +28,12 @@
   "last_summary_date": "2026-09-28",
   "zone_last_fired": {
     "OB-short-4147.7": 1790613667.4940062,
-    "FVG-long-4132.5": 1790614561.7413967
+    "FVG-long-4132.5": 1790614561.7413967,
+    "OB-short-4132.5": 1790614906.6207886,
+    "FVG-short-4133.0": 1790614906.6208012
   },
   "last_weekly_summary_date": "2026-09-26",
   "last_doji_candle": 1790610600000,
-  "global_last_signal_time": 1790613969.763404,
-  "global_last_signal_candle": 1790613600000
+  "global_last_signal_time": 1790614906.623294,
+  "global_last_signal_candle": 1790614500000
 }
