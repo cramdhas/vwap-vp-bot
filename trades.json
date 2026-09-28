@@ -2094,9 +2094,9 @@
     "strategy": "MA4/45 Pullback",
     "level": "MA4/45 Pullback (touch 1 bar ago)",
     "opened_at": "2026-09-28T10:11:18.047181+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
+    "status": "closed",
+    "closed_at": "2026-09-28T12:11:14.936127+00:00",
+    "result": "win",
     "pnl_points": 4.0
   },
   {
@@ -2158,26 +2158,26 @@
     "strategy": "Order Block",
     "level": "Bearish OB 4158.00",
     "opened_at": "2026-09-28T11:36:41.388215+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-28T12:11:15.659484+00:00",
+    "result": "loss",
+    "pnl_points": -6
   },
   {
     "direction": "long",
     "entry": 4152.5,
-    "sl_price": 4145.5,
+    "sl_price": 4153.0,
     "original_sl": 4145.5,
     "tp1_price": 4159.5,
     "tp2_price": 4163.5,
-    "tp1_hit": false,
+    "tp1_hit": true,
     "strategy": "MA3/25 Cross",
     "level": "MA3/25 Touch Up @ 4152.50 (MA25 4153.91, slope +0.31)",
     "opened_at": "2026-09-28T11:36:41.865373+00:00",
     "status": "open",
     "closed_at": null,
     "result": null,
-    "pnl_points": 0.0
+    "pnl_points": 4.0
   },
   {
     "direction": "short",
@@ -2190,10 +2190,10 @@
     "strategy": "SMA18 Touch",
     "level": "SMA18 Touch Down @ 4152.50 (SMA18 4154.59, slope -0.17)",
     "opened_at": "2026-09-28T11:36:42.345780+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-28T12:11:17.013211+00:00",
+    "result": "loss",
+    "pnl_points": -7
   },
   {
     "direction": "short",
