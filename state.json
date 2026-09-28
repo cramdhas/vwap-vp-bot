@@ -7,7 +7,7 @@
     "FVG": 1790566559.6842859,
     "SMA6": 1790565958.4773934,
     "MA2/148 Cross": 1790365259.4894884,
-    "SMA18 Touch": 1790562958.4762177
+    "SMA18 Touch": 1790570503.1512177
   },
   "last_signal_direction": {
     "VWAP+VP": "short",
@@ -21,7 +21,6 @@
   },
   "last_summary_date": "2026-09-28",
   "zone_last_fired": {
-    "FVG-short-4197.1": 1790566559.0497255,
     "FVG-long-4194.3": 1790568968.6130934
   },
   "last_weekly_summary_date": "2026-09-26"
