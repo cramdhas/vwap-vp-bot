@@ -1966,10 +1966,10 @@
     "strategy": "FVG",
     "level": "Bearish FVG 4192.76",
     "opened_at": "2026-09-28T05:21:47.817510+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 2.0
+    "status": "closed",
+    "closed_at": "2026-09-28T05:41:11.125539+00:00",
+    "result": "win",
+    "pnl_points": 6.0
   },
   {
     "direction": "short",
@@ -1982,6 +1982,22 @@
     "strategy": "SMA6",
     "level": "SMA6 Cross Down 4189.63",
     "opened_at": "2026-09-28T05:35:58.568914+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0
+  },
+  {
+    "direction": "short",
+    "entry": 4182.200195,
+    "sl_price": 4188.2,
+    "original_sl": 4188.2,
+    "tp1_price": 4177.4,
+    "tp2_price": 4174.1,
+    "tp1_hit": false,
+    "strategy": "Order Block",
+    "level": "Bearish OB 4192.17",
+    "opened_at": "2026-09-28T05:41:12.544328+00:00",
     "status": "open",
     "closed_at": null,
     "result": null,
