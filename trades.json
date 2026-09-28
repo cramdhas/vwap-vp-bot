@@ -2526,10 +2526,10 @@
     "strategy": "MA4/45 Pullback",
     "level": "MA4/45 Pullback (touch 2 bars ago)",
     "opened_at": "2026-09-28T16:46:10.346694+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 4.0
+    "status": "closed",
+    "closed_at": "2026-09-28T20:10:51.779479+00:00",
+    "result": "win",
+    "pnl_points": 10.0
   },
   {
     "direction": "short",
