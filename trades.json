@@ -2546,5 +2546,21 @@
     "closed_at": "2026-09-28T17:16:10.457040+00:00",
     "result": "loss",
     "pnl_points": -7
+  },
+  {
+    "direction": "short",
+    "entry": 4139.5,
+    "sl_price": 4145.79,
+    "original_sl": 4145.79,
+    "tp1_price": 4134.78,
+    "tp2_price": 4131.5,
+    "tp1_hit": false,
+    "strategy": "SMA6",
+    "level": "SMA6 Cross Down 4136.45",
+    "opened_at": "2026-09-28T17:51:15.010265+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0
   }
 ]
