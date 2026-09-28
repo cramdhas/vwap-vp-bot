@@ -1934,9 +1934,9 @@
     "strategy": "FVG",
     "level": "Bearish FVG 4197.10",
     "opened_at": "2026-09-28T03:35:59.682970+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0
+    "status": "closed",
+    "closed_at": "2026-09-28T03:55:57.333683+00:00",
+    "result": "loss",
+    "pnl_points": -6
   }
 ]
