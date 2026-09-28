@@ -1,6 +1,6 @@
 {
   "last_signal_time": {
-    "VWAP+VP": 1790315475.0686195,
+    "VWAP+VP": 1790596913.5004349,
     "Liquidity Sweep": 1790304369.7673712,
     "EMA+RSI": 1790594173.5619874,
     "Order Block": 1790595401.3900955,
@@ -28,7 +28,8 @@
   "last_summary_date": "2026-09-28",
   "zone_last_fired": {
     "FVG-short-4152.9": 1790594172.847493,
-    "OB-short-4158.0": 1790595400.8029811
+    "OB-short-4158.0": 1790595400.8029811,
+    "OB-short-4155.9": 1790596912.8229523
   },
   "last_weekly_summary_date": "2026-09-26",
   "last_doji_candle": 1790589300000
