@@ -9,7 +9,7 @@
     "MA2/148 Cross": 1790365259.4894884,
     "SMA18 Touch": 1790611753.9047918,
     "Doji": 1790610071.3903291,
-    "MA4/45 Pullback": 1790590278.0490167,
+    "MA4/45 Pullback": 1790613970.3479655,
     "MA3/25 Cross": 1790604674.2821305
   },
   "last_signal_direction": {
@@ -31,6 +31,6 @@
   },
   "last_weekly_summary_date": "2026-09-26",
   "last_doji_candle": 1790610600000,
-  "global_last_signal_time": 1790613667.4952798,
-  "global_last_signal_candle": 1790613300000
+  "global_last_signal_time": 1790613969.763404,
+  "global_last_signal_candle": 1790613600000
 }
