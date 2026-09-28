@@ -2498,5 +2498,21 @@
     "closed_at": "2026-09-28T16:21:25.152378+00:00",
     "result": "loss",
     "pnl_points": -6
+  },
+  {
+    "direction": "short",
+    "entry": 4136.799805,
+    "sl_price": 4146.06,
+    "original_sl": 4146.06,
+    "tp1_price": 4129.39,
+    "tp2_price": 4124.8,
+    "tp1_hit": false,
+    "strategy": "Order Block",
+    "level": "Bearish OB 4147.66",
+    "opened_at": "2026-09-28T16:41:07.990618+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0
   }
 ]
