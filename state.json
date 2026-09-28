@@ -5,8 +5,9 @@
     "EMA+RSI": 1790361079.3801985,
     "Order Block": 1790559089.2357297,
     "FVG": 1790562107.2451613,
-    "SMA6": 1790360464.928794,
-    "MA2/148 Cross": 1790365259.4894884
+    "SMA6": 1790562957.7948313,
+    "MA2/148 Cross": 1790365259.4894884,
+    "SMA18 Touch": 1790562958.4762177
   },
   "last_signal_direction": {
     "VWAP+VP": "short",
@@ -14,8 +15,9 @@
     "EMA+RSI": "long",
     "Order Block": "short",
     "FVG": "short",
-    "SMA6": "long",
-    "MA2/148 Cross": "long"
+    "SMA6": "short",
+    "MA2/148 Cross": "long",
+    "SMA18 Touch": "short"
   },
   "last_summary_date": "2026-09-28",
   "zone_last_fired": {
