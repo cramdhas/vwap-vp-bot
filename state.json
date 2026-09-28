@@ -4,7 +4,7 @@
     "Liquidity Sweep": 1790304369.7673712,
     "EMA+RSI": 1790361079.3801985,
     "Order Block": 1790315475.768842,
-    "FVG": 1790346340.445987,
+    "FVG": 1790556668.6465209,
     "SMA6": 1790360464.928794,
     "MA2/148 Cross": 1790365259.4894884
   },
@@ -18,6 +18,8 @@
     "MA2/148 Cross": "long"
   },
   "last_summary_date": "2026-09-28",
-  "zone_last_fired": {},
+  "zone_last_fired": {
+    "FVG-short-4238.3": 1790556668.0901146
+  },
   "last_weekly_summary_date": "2026-09-26"
 }
