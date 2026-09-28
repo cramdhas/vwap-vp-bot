@@ -8,7 +8,7 @@
     "SMA6": 1790600760.8940322,
     "MA2/148 Cross": 1790365259.4894884,
     "SMA18 Touch": 1790604364.0068555,
-    "Doji": 1790607358.8341296,
+    "Doji": 1790610071.3903291,
     "MA4/45 Pullback": 1790590278.0490167,
     "MA3/25 Cross": 1790604674.2821305
   },
@@ -31,7 +31,7 @@
     "FVG-short-4124.4": 1790609763.0891058
   },
   "last_weekly_summary_date": "2026-09-26",
-  "last_doji_candle": 1790607000000,
-  "global_last_signal_time": 1790608574.723511,
-  "global_last_signal_candle": 1790608200000
+  "last_doji_candle": 1790609700000,
+  "global_last_signal_time": 1790610070.697359,
+  "global_last_signal_candle": 1790609700000
 }
