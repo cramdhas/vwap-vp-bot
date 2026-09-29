@@ -26,9 +26,7 @@
     "MA3/25 Cross": "short"
   },
   "last_summary_date": "2026-09-29",
-  "zone_last_fired": {
-    "OB-long-4183.1": 1790683544.5988364
-  },
+  "zone_last_fired": {},
   "last_weekly_summary_date": "2026-09-26",
   "last_doji_candle": 1790610600000,
   "global_last_signal_time": 1790686259.0394464,
