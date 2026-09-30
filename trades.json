@@ -2846,9 +2846,25 @@
     "strategy": "EMA+RSI",
     "level": "EMA Cross RSI 55.7",
     "opened_at": "2026-09-30T11:50:58.260992+00:00",
+    "status": "closed",
+    "closed_at": "2026-09-30T12:35:42.591101+00:00",
+    "result": "win",
+    "pnl_points": 6.0
+  },
+  {
+    "direction": "long",
+    "entry": 4214.0,
+    "sl_price": 4208.0,
+    "original_sl": 4208.0,
+    "tp1_price": 4218.5,
+    "tp2_price": 4222.0,
+    "tp1_hit": false,
+    "strategy": "SMA6",
+    "level": "SMA6 Cross Up 4221.68",
+    "opened_at": "2026-09-30T12:35:43.613105+00:00",
     "status": "open",
     "closed_at": null,
     "result": null,
-    "pnl_points": 2.0
+    "pnl_points": 0.0
   }
 ]
