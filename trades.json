@@ -2798,10 +2798,10 @@
     "strategy": "EMA+RSI",
     "level": "EMA Cross RSI 57.9",
     "opened_at": "2026-09-30T06:10:54.760533+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 2.0
+    "status": "closed",
+    "closed_at": "2026-09-30T06:55:38.618505+00:00",
+    "result": "win",
+    "pnl_points": 6.0
   },
   {
     "direction": "long",
@@ -2814,9 +2814,9 @@
     "strategy": "SMA6",
     "level": "SMA6 Cross Up 4213.67",
     "opened_at": "2026-09-30T06:35:42.430256+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 2.0
+    "status": "closed",
+    "closed_at": "2026-09-30T06:55:39.211392+00:00",
+    "result": "win",
+    "pnl_points": 6.0
   }
 ]
