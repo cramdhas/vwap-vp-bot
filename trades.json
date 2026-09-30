@@ -2894,9 +2894,9 @@
     "strategy": "SMA6",
     "level": "SMA6 Cross Down 4201.62",
     "opened_at": "2026-09-30T15:01:37.686534+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 3.0
+    "status": "closed",
+    "closed_at": "2026-09-30T15:55:40.996250+00:00",
+    "result": "win",
+    "pnl_points": 8.0
   }
 ]
