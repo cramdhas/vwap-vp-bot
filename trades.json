@@ -2942,25 +2942,25 @@
     "strategy": "EMA+RSI",
     "level": "EMA Cross RSI 44.1",
     "opened_at": "2026-09-30T22:29:15.366156+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 2.0
+    "status": "closed",
+    "closed_at": "2026-10-01T00:20:56.237225+00:00",
+    "result": "win",
+    "pnl_points": 6.0
   },
   {
     "direction": "short",
     "entry": 4157.100098,
-    "sl_price": 4164.1,
+    "sl_price": 4156.6,
     "original_sl": 4164.1,
     "tp1_price": 4150.1,
     "tp2_price": 4146.1,
-    "tp1_hit": false,
+    "tp1_hit": true,
     "strategy": "SMA18 Touch",
     "level": "SMA18 Touch Down @ 4157.10 (SMA18 4184.64, slope -0.11)",
     "opened_at": "2026-09-30T23:50:49.202839+00:00",
     "status": "open",
     "closed_at": null,
     "result": null,
-    "pnl_points": 0.0
+    "pnl_points": 4.0
   }
 ]
