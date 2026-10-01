@@ -3082,5 +3082,23 @@
     "pnl_points": -8,
     "breakeven_enabled": true,
     "single_target": false
+  },
+  {
+    "direction": "long",
+    "entry": 4167.0,
+    "sl_price": 4160.0,
+    "original_sl": 4160.0,
+    "tp1_price": 4174.0,
+    "tp2_price": 4178.0,
+    "tp1_hit": false,
+    "strategy": "SMA18 Touch",
+    "level": "SMA18 Touch Up @ 4167.00 (SMA18 4200.98, slope +0.34)",
+    "opened_at": "2026-10-01T18:05:43.615577+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": true,
+    "single_target": false
   }
 ]
