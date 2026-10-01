@@ -2994,5 +2994,21 @@
     "closed_at": "2026-10-01T02:55:56.117668+00:00",
     "result": "loss",
     "pnl_points": -6
+  },
+  {
+    "direction": "short",
+    "entry": 4162.799805,
+    "sl_price": 4169.8,
+    "original_sl": 4169.8,
+    "tp1_price": 4155.8,
+    "tp2_price": 4151.8,
+    "tp1_hit": false,
+    "strategy": "FVG",
+    "level": "Bearish FVG 4158.79",
+    "opened_at": "2026-10-01T03:01:49.329888+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0
   }
 ]
