@@ -7,7 +7,7 @@
     "FVG": 1790858150.3295374,
     "SMA6": 1790816156.1560147,
     "MA2/148 Cross": 1790365259.4894884,
-    "SMA18 Touch": 1790877943.617859,
+    "SMA18 Touch": 1790880071.4615233,
     "Doji": 1790610071.3903291,
     "MA4/45 Pullback": 1790613970.3479655,
     "MA3/25 Cross": 1790674539.3532233
@@ -29,6 +29,6 @@
   "zone_last_fired": {},
   "last_weekly_summary_date": "2026-09-26",
   "last_doji_candle": 1790610600000,
-  "global_last_signal_time": 1790878555.359374,
-  "global_last_signal_candle": 1790877901000
+  "global_last_signal_time": 1790880070.8705637,
+  "global_last_signal_candle": 1790879415000
 }
