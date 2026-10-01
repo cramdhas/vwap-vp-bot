@@ -3006,9 +3006,27 @@
     "strategy": "FVG",
     "level": "Bearish FVG 4158.79",
     "opened_at": "2026-10-01T03:01:49.329888+00:00",
+    "status": "closed",
+    "closed_at": "2026-10-01T03:46:10.377205+00:00",
+    "result": "loss",
+    "pnl_points": -7
+  },
+  {
+    "direction": "long",
+    "entry": 4170.899902,
+    "sl_price": 4164.9,
+    "original_sl": 4164.9,
+    "tp1_price": 4175.4,
+    "tp2_price": 4178.9,
+    "tp1_hit": false,
+    "strategy": "VWAP+VP",
+    "level": "VAH",
+    "opened_at": "2026-10-01T03:46:11.348033+00:00",
     "status": "open",
     "closed_at": null,
     "result": null,
-    "pnl_points": 0.0
+    "pnl_points": 0.0,
+    "breakeven_enabled": true,
+    "single_target": false
   }
 ]
