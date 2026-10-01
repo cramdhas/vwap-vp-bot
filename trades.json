@@ -3136,5 +3136,23 @@
     "pnl_points": 0.0,
     "breakeven_enabled": true,
     "single_target": false
+  },
+  {
+    "direction": "long",
+    "entry": 4177.600098,
+    "sl_price": 4170.6,
+    "original_sl": 4170.6,
+    "tp1_price": 4183.2,
+    "tp2_price": 4187.05,
+    "tp1_hit": false,
+    "strategy": "Order Block",
+    "level": "Bullish OB 4202.90",
+    "opened_at": "2026-10-01T19:15:54.447890+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": true,
+    "single_target": false
   }
 ]
