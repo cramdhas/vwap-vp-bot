@@ -3064,5 +3064,23 @@
     "pnl_points": 4.0,
     "breakeven_enabled": true,
     "single_target": false
+  },
+  {
+    "direction": "short",
+    "entry": 4163.100098,
+    "sl_price": 4170.89,
+    "original_sl": 4170.89,
+    "tp1_price": 4156.87,
+    "tp2_price": 4152.58,
+    "tp1_hit": false,
+    "strategy": "Order Block",
+    "level": "Bearish OB 4198.50",
+    "opened_at": "2026-10-01T16:55:44.588895+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": true,
+    "single_target": false
   }
 ]
