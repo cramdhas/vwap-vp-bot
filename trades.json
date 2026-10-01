@@ -3028,5 +3028,23 @@
     "pnl_points": 6.0,
     "breakeven_enabled": true,
     "single_target": false
+  },
+  {
+    "direction": "long",
+    "entry": 4185.5,
+    "sl_price": 4178.5,
+    "original_sl": 4178.5,
+    "tp1_price": 4192.5,
+    "tp2_price": 4196.5,
+    "tp1_hit": false,
+    "strategy": "FVG",
+    "level": "Bullish FVG 4203.00",
+    "opened_at": "2026-10-01T12:35:50.327024+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": true,
+    "single_target": false
   }
 ]
