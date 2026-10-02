@@ -3148,9 +3148,9 @@
     "strategy": "Order Block",
     "level": "Bullish OB 4202.90",
     "opened_at": "2026-10-01T19:15:54.447890+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
+    "status": "closed",
+    "closed_at": "2026-10-02T00:10:49.797902+00:00",
+    "result": "win",
     "pnl_points": 3.0,
     "breakeven_enabled": true,
     "single_target": false
