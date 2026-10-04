@@ -1,0 +1,49 @@
+name: Backtest
+
+# Manual run only: Actions tab -> Backtest -> Run workflow.
+# Reads the TwelveData key from the repository SECRET (never put the key in a file).
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "How many days of gold M5 history to test"
+        default: "30"
+        required: true
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install requirements
+        run: pip install requests
+
+      - name: Run backtest
+        env:
+          TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
+        run: |
+          python -u backtest.py --days "${{ inputs.days }}" 2>&1 | tee backtest_output.txt
+
+      - name: Show result on the run page
+        if: always()
+        run: |
+          echo '### Backtest result' >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          cat backtest_output.txt >> "$GITHUB_STEP_SUMMARY" || true
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Save full tables
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: backtest-results
+          path: |
+            backtest_output.txt
+            backtest_results.csv
+          if-no-files-found: ignore
