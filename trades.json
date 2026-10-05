@@ -3498,5 +3498,23 @@
     "pnl_points": -7,
     "breakeven_enabled": false,
     "single_target": true
+  },
+  {
+    "direction": "short",
+    "entry": 4166.1001,
+    "sl_price": 4173.1,
+    "original_sl": 4173.1,
+    "tp1_price": 4160.1,
+    "tp2_price": 4160.1,
+    "tp1_hit": false,
+    "strategy": "SMA13/EMA18",
+    "level": "SMA13/EMA18 Trend Cross Down @ 4166.10 (SMA13 4166.95, EMA18 4173.72, gap -6.78, slopes -0.43/-0.88)",
+    "opened_at": "2026-10-05T14:51:02.516823+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true
   }
 ]
