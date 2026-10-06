@@ -29,14 +29,14 @@
     "SMA13/EMA18": "short",
     "OB Engine 1m": "long"
   },
-  "last_summary_date": "2026-10-05",
+  "last_summary_date": "2026-10-06",
   "zone_last_fired": {},
   "last_weekly_summary_date": "2026-10-03",
   "last_doji_candle": 1790610600000,
   "global_last_signal_time": 1791242150.8150904,
   "global_last_signal_candle": 1791241485000,
   "obe_last_bar": {
-    "5m": 1791243914000,
+    "5m": 1791244229000,
     "1m": 1791176640000
   }
 }
