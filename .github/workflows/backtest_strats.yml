@@ -12,7 +12,10 @@ jobs:
       - run: python backtest_strats.py
         env:
           TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
-          SPREAD: "0.3"
+          SPREAD: "0.4"
           MONTHS: "3"
-          STRATS: "SMA6,EMA+RSI"
+          STRATS: "HalfTrend,SMA6,EMA+RSI"
+          GRID: "1"
+          SESSION: ""
+          
           
