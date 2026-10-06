@@ -3714,5 +3714,23 @@
     "pnl_points": 8,
     "breakeven_enabled": false,
     "single_target": true
+  },
+  {
+    "direction": "long",
+    "entry": 4163.600098,
+    "sl_price": 4156.6,
+    "original_sl": 4156.6,
+    "tp1_price": 4169.6,
+    "tp2_price": 4169.6,
+    "tp1_hit": false,
+    "strategy": "EMA+RSI",
+    "level": "EMA Cross RSI 55.3",
+    "opened_at": "2026-10-06T15:15:56.617693+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true
   }
 ]
