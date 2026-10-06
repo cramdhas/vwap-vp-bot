@@ -5,7 +5,7 @@
     "EMA+RSI": 1791250854.0606205,
     "Order Block": 1791259285.3840325,
     "FVG": 1790858150.3295374,
-    "SMA6": 1791264346.5236218,
+    "SMA6": 1791267659.93201,
     "MA2/148 Cross": 1790365259.4894884,
     "SMA18 Touch": 1791172548.0800576,
     "Doji": 1790610071.3903291,
@@ -33,10 +33,10 @@
   "zone_last_fired": {},
   "last_weekly_summary_date": "2026-10-03",
   "last_doji_candle": 1790610600000,
-  "global_last_signal_time": 1791264345.936316,
-  "global_last_signal_candle": 1791263712000,
+  "global_last_signal_time": 1791267659.1827507,
+  "global_last_signal_candle": 1791266986000,
   "obe_last_bar": {
-    "5m": 1791266745000,
+    "5m": 1791266986000,
     "1m": 1791176640000
   }
 }
