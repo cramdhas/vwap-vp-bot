@@ -59,27 +59,28 @@ def month_of(c, i):
 
 def main():
     c = bt.load()
-    print(f"{len(c)} candles, spread {bt.SPREAD} pt\n")
+    print(f"{len(c)} candles, spread {bt.SPREAD} pt, one open trade per strategy\n")
     names = [s.strip() for s in os.environ.get("STRATS", "SMA6,EMA+RSI").split(",")]
     for name in names:
         fn = AVAILABLE.get(name)
         if not fn:
             print(f"unknown strategy {name}\n"); continue
-        sig = signals(c, fn)
-        print(f"=== {name}: {len(sig)} signals ===")
-        for label, (sl, tp) in {"SL7/TP6": (7, 6), "SL7/TP7": (7, 7)}.items():
-            print(f"  {label} all     {bt.stats([bt.simulate(c, i, s, sl, tp) for i, s in sig])}")
-        rb = random_baseline(c, max(len(sig), 30), 7, 6)
+        sig = [(i, d) for i, d in signals(c, fn)]
+        print(f"=== {name}: {len(sig)} raw signals ===")
+        tr = bt.trades_for(c, sig, 7, 6)
+        pn = lambda rows: [r[3] for r in rows]
+        print(f"  SL7/TP6 all     {bt.stats(pn(tr))}")
+        print(f"  SL7/TP7 all     {bt.stats(pn(bt.trades_for(c, sig, 7, 7)))}")
+        rb = random_baseline(c, max(len(tr), 30), 7, 6)
         print(f"  random entries SL7/TP6 exp={rb:+.2f}/trade  (benchmark to beat)")
         half = len(c) // 2
-        for label, sub in (("1st half", [x for x in sig if x[0] < half]),
-                           ("2nd half", [x for x in sig if x[0] >= half])):
-            print(f"  SL7/TP6 {label} {bt.stats([bt.simulate(c, i, s, 7, 6) for i, s in sub])}")
+        print(f"  SL7/TP6 1st half {bt.stats(pn([r for r in tr if r[0] < half]))}")
+        print(f"  SL7/TP6 2nd half {bt.stats(pn([r for r in tr if r[0] >= half]))}")
         months = {}
-        for i, s in sig:
-            m = month_of(c, i)
+        for r in tr:
+            m = month_of(c, r[0])
             if m:
-                months.setdefault(m, []).append(bt.simulate(c, i, s, 7, 6))
+                months.setdefault(m, []).append(r[3])
         for m in sorted(months):
             print(f"  SL7/TP6 {m}    {bt.stats(months[m])}")
         print()

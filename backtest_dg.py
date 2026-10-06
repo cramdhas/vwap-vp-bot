@@ -61,7 +61,7 @@ def fetch_history(months=MONTHS):
         out.append({"open_time": int(t.timestamp() * 1000), "open": float(v["open"]),
                     "high": float(v["high"]), "low": float(v["low"]),
                     "close": float(v["close"]), "volume": float(v.get("volume") or 0)})
-    return bot.sanitize_candles(out)
+    return bot.sanitize_candles(market_open_only(out))
 
 
 def load():
@@ -74,7 +74,8 @@ def load():
     return fetch_history()
 
 
-def simulate(c, i, side, sl, tp):
+def simulate_ex(c, i, side, sl, tp):
+    """Returns (pnl, exit_index); (None, None) if still open at end of data."""
     e = c[i]["close"]
     for j in range(i + 1, len(c)):
         hi, lo = c[j]["high"], c[j]["low"]
@@ -83,10 +84,40 @@ def simulate(c, i, side, sl, tp):
         else:
             hit_sl, hit_tp = hi >= e + sl, lo <= e - tp
         if hit_sl:
-            return -sl - SPREAD          # SL first / both = loss
+            return -sl - SPREAD, j       # SL first / both = loss
         if hit_tp:
-            return tp - SPREAD
-    return None                          # still open at end of data
+            return tp - SPREAD, j
+    return None, None
+
+
+def simulate(c, i, side, sl, tp):
+    return simulate_ex(c, i, side, sl, tp)[0]
+
+
+def trades_for(c, sigs, sl, tp):
+    """Live rule: only ONE open trade per strategy at a time (can_send in main.py).
+    sigs = [(i, side, ...)]. Returns [(i, side, extra, pnl)] in order."""
+    out, busy_until = [], -1
+    for sg in sorted(sigs, key=lambda x: x[0]):
+        i, side = sg[0], sg[1]
+        if i <= busy_until:
+            continue
+        pnl, j = simulate_ex(c, i, side, sl, tp)
+        if pnl is None:
+            break
+        out.append((i, side, sg, pnl))
+        busy_until = j
+    return out
+
+
+def market_open_only(c):
+    """Drop weekend / closed-market bars using the bot's own Octa hours rule."""
+    if not c or "open_time" not in c[0]:
+        return c
+    keep = [x for x in c if bot.is_octa_xauusd_open(
+        datetime.fromtimestamp(x["open_time"] / 1000, timezone.utc))]
+    print(f"market-hours filter: kept {len(keep)} of {len(c)} candles")
+    return keep
 
 
 def stats(res):
@@ -105,32 +136,49 @@ def stats(res):
 
 def main():
     c = load()
-    t0 = datetime.fromtimestamp(c[0].get("open_time", 0) / 1000, timezone.utc) if c[0].get("open_time") else None
-    t1 = datetime.fromtimestamp(c[-1].get("open_time", 0) / 1000, timezone.utc) if c[-1].get("open_time") else None
-    print(f"{len(c)} candles ({t0:%Y-%m-%d} to {t1:%Y-%m-%d}), spread {SPREAD} pt\n" if t0 else f"{len(c)} candles, spread {SPREAD} pt\n")
-    variants = {"SL7/TP6": (7, 6), "SL7/TP7": (7, 7)}
+    t0 = c[0].get("open_time"); t1 = c[-1].get("open_time")
+    rng = ""
+    if t0 and t1:
+        rng = f" ({datetime.fromtimestamp(t0/1000, timezone.utc):%Y-%m-%d} to {datetime.fromtimestamp(t1/1000, timezone.utc):%Y-%m-%d})"
+    print(f"{len(c)} candles{rng}, spread {SPREAD} pt, one open trade at a time\n")
+    half = len(c) // 2
     for mode in ("trend", "reversion", "both"):
         bot.DG_MODE = mode
         g = bot.dynamic_grid_compute(c)
-        sigs = [(i, g["signal"][i], g["level"][i], g["kind"][i])
+        sigs = [(i, "long" if g["signal"][i] == "long" else "short", g["level"][i])
                 for i in range(len(c)) if g["signal"][i]]
-        print(f"=== mode={mode}: {len(sigs)} signals ===")
-        for name, (sl, tp) in variants.items():
-            print(f"  {name:8s} all     {stats([simulate(c, i, s, sl, tp) for i, s, _, _ in sigs])}")
+        print(f"=== mode={mode}: {len(sigs)} raw signals ===")
+        tr = trades_for(c, sigs, 7, 6)
+        pn = lambda rows: [r[3] for r in rows]
+        print(f"  SL7/TP6  all     {stats(pn(tr))}")
+        print(f"  SL7/TP7  all     {stats(pn(trades_for(c, sigs, 7, 7)))}")
         for lv in range(1, bot.DG_NUM_LEVELS + 1):
-            sub = [x for x in sigs if x[2] == lv]
+            sub = [r for r in tr if r[2][2] == lv]
             if sub:
-                print(f"  SL7/TP6  deg {lv}   {stats([simulate(c, i, s, 7, 6) for i, s, _, _ in sub])}")
-        half = len(c) // 2
-        for label, sub in (("1st half", [x for x in sigs if x[0] < half]),
-                           ("2nd half", [x for x in sigs if x[0] >= half])):
-            print(f"  SL7/TP6  {label} {stats([simulate(c, i, s, 7, 6) for i, s, _, _ in sub])}")
-        # baseline-target exit (min 3 pts, max 12 pts), SL 7
-        res = []
-        for i, s, _, _ in sigs:
+                print(f"  SL7/TP6  deg {lv}   {stats(pn(sub))}")
+        print(f"  SL7/TP6  1st half {stats(pn([r for r in tr if r[0] < half]))}")
+        print(f"  SL7/TP6  2nd half {stats(pn([r for r in tr if r[0] >= half]))}")
+        months = {}
+        for r in tr:
+            t = c[r[0]].get("open_time")
+            if t:
+                months.setdefault(datetime.fromtimestamp(t/1000, timezone.utc).strftime("%Y-%m"), []).append(r[3])
+        for m in sorted(months):
+            print(f"  SL7/TP6  {m}    {stats(months[m])}")
+        base = []
+        for i, side, _ in sigs:
             d = abs(g["hma"][i] - c[i]["close"])
-            res.append(simulate(c, i, s, 7, max(3.0, min(12.0, d))))
-        print(f"  SL7/baseline-TP {stats(res)}\n")
+            base.append((i, side, None))
+        trb, busy = [], -1
+        for i, side, _ in base:
+            if i <= busy:
+                continue
+            d = abs(g["hma"][i] - c[i]["close"])
+            pnl, j = simulate_ex(c, i, side, 7, max(3.0, min(12.0, d)))
+            if pnl is None:
+                break
+            trb.append(pnl); busy = j
+        print(f"  SL7/baseline-TP {stats(trb)}\n")
 
 
 if __name__ == "__main__":
