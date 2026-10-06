@@ -3,7 +3,7 @@
     "VWAP+VP": 1790826371.3506057,
     "Liquidity Sweep": 1790598360.3657613,
     "EMA+RSI": 1791250854.0606205,
-    "Order Block": 1790882154.450501,
+    "Order Block": 1791259285.3840325,
     "FVG": 1790858150.3295374,
     "SMA6": 1791228683.9313142,
     "MA2/148 Cross": 1790365259.4894884,
@@ -18,7 +18,7 @@
     "VWAP+VP": "long",
     "Liquidity Sweep": "short",
     "EMA+RSI": "short",
-    "Order Block": "long",
+    "Order Block": "short",
     "FVG": "long",
     "SMA6": "short",
     "MA2/148 Cross": "long",
@@ -30,11 +30,13 @@
     "OB Engine 1m": "long"
   },
   "last_summary_date": "2026-10-06",
-  "zone_last_fired": {},
+  "zone_last_fired": {
+    "OB-short-4172.7": 1791259284.6783013
+  },
   "last_weekly_summary_date": "2026-10-03",
   "last_doji_candle": 1790610600000,
-  "global_last_signal_time": 1791250853.5237136,
-  "global_last_signal_candle": 1791250158000,
+  "global_last_signal_time": 1791259284.6982577,
+  "global_last_signal_candle": 1791172500000,
   "obe_last_bar": {
     "5m": 1791258298000,
     "1m": 1791176640000
