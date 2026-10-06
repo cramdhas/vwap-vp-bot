@@ -17,5 +17,4 @@ jobs:
           MONTHS: "3"
           STRATS: "SMA6,EMA+RSI,MA Pullback,SMA13/EMA18,Liquidity Sweep,HalfTrend,MA3/25 Cross,SMA18 Touch,VWAP+VP,VP POC Bounce,VP Reversal,VP Breakout"
           VERBOSE: "0"
-          
-          
+          BIAS: "1"
