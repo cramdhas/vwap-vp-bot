@@ -3,6 +3,7 @@ on: workflow_dispatch
 jobs:
   backtest:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -14,8 +15,7 @@ jobs:
           TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
           SPREAD: "0.4"
           MONTHS: "3"
-          STRATS: "HalfTrend,SMA6,EMA+RSI"
-          GRID: "1"
-          SESSION: ""
+          STRATS: "SMA6,EMA+RSI,MA Pullback,SMA13/EMA18,Liquidity Sweep,HalfTrend,MA3/25 Cross,SMA18 Touch,VWAP+VP,VP POC Bounce,VP Reversal,VP Breakout"
+          VERBOSE: "0"
           
           
