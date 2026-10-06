@@ -3690,10 +3690,10 @@
     "strategy": "SMA6",
     "level": "SMA6 Cross Down 4199.00",
     "opened_at": "2026-10-06T13:01:40.988314+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0,
+    "status": "closed",
+    "closed_at": "2026-10-06T13:31:23.331825+00:00",
+    "result": "win",
+    "pnl_points": 8,
     "breakeven_enabled": false,
     "single_target": true
   }
