@@ -32,15 +32,13 @@
     "MSB-OB": "short"
   },
   "last_summary_date": "2026-10-07",
-  "zone_last_fired": {
-    "MSBOB-short-1791333000000": 1791345000.4309783
-  },
+  "zone_last_fired": {},
   "last_weekly_summary_date": "2026-10-03",
   "last_doji_candle": 1790610600000,
   "global_last_signal_time": 1791345691.812721,
   "global_last_signal_candle": 1791345017000,
   "obe_last_bar": {
-    "5m": 1791347696000,
+    "5m": 1791348002000,
     "1m": 1791176640000
   }
 }
