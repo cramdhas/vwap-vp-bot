@@ -3798,10 +3798,10 @@
     "strategy": "EMA+RSI",
     "level": "EMA Cross RSI 47.6",
     "opened_at": "2026-10-07T08:20:57.218950+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0,
+    "status": "closed",
+    "closed_at": "2026-10-07T09:01:40.850347+00:00",
+    "result": "win",
+    "pnl_points": 6,
     "breakeven_enabled": false,
     "single_target": true
   }
