@@ -3762,10 +3762,10 @@
     "strategy": "MSB-OB",
     "level": "Bearish MSB / SELL | ZigZag 9 | Fib 0.5 | break 4189.60 | OB 4190.80-4197.30",
     "opened_at": "2026-10-07T03:50:00.965022+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0,
+    "status": "closed",
+    "closed_at": "2026-10-07T03:50:53.651629+00:00",
+    "result": "win",
+    "pnl_points": 10,
     "breakeven_enabled": false,
     "single_target": true
   }
