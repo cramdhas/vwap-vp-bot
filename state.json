@@ -31,14 +31,14 @@
     "OB Engine 1m": "long",
     "MSB-OB": "short"
   },
-  "last_summary_date": "2026-10-07",
+  "last_summary_date": "2026-10-08",
   "zone_last_fired": {},
   "last_weekly_summary_date": "2026-10-03",
   "last_doji_candle": 1790610600000,
   "global_last_signal_time": 1791411942.6955895,
   "global_last_signal_candle": 1791411310000,
   "obe_last_bar": {
-    "5m": 1791416676000,
+    "5m": 1791417008000,
     "1m": 1791176640000
   }
 }
