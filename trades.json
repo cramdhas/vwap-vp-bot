@@ -4107,10 +4107,10 @@
     "strategy": "SMA13/EMA18",
     "level": "SMA13/EMA18 Trend Cross Up @ 4154.90 (SMA13 4154.82, EMA18 4151.03, gap +3.79, slopes +0.34/+0.46)",
     "opened_at": "2026-10-08T14:50:53.233865+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0,
+    "status": "closed",
+    "closed_at": "2026-10-08T14:51:25.750375+00:00",
+    "result": "loss",
+    "pnl_points": -7,
     "breakeven_enabled": false,
     "single_target": true
   }
