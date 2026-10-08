@@ -3966,5 +3966,26 @@
     "pnl_points": 0.0,
     "breakeven_enabled": false,
     "single_target": true
+  },
+  {
+    "direction": "short",
+    "entry": 4145.3999,
+    "sl_price": 4152.4,
+    "original_sl": 4152.4,
+    "tp1_price": 4139.4,
+    "tp2_price": 4139.4,
+    "tp1_hit": false,
+    "strategy": "MA3/25 Cross",
+    "level": "MA3/25 Touch Down @ 4145.40 (MA25 4145.45, slope -0.30, candle 4145.40-4145.40) | signal candle close 4145.40 | feed xaus_chart",
+    "opened_at": "2026-10-08T07:51:32.335965+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true,
+    "scan_from_ms": 1791445559000,
+    "timeframe": "5m",
+    "signal_feed": "xaus_chart"
   }
 ]
