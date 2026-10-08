@@ -3906,10 +3906,10 @@
     "strategy": "MA3/25 Cross",
     "level": "MA3/25 Touch Down @ 4133.40 (MA25 4133.43, slope -0.05, candle 4133.40-4133.40)",
     "opened_at": "2026-10-08T00:05:39.581875+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0,
+    "status": "closed",
+    "closed_at": "2026-10-08T00:10:51.532509+00:00",
+    "result": "win",
+    "pnl_points": 6,
     "breakeven_enabled": false,
     "single_target": true
   }
