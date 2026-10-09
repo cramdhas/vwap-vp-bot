@@ -14,7 +14,7 @@
     "SMA13/EMA18": 1791531065.2339804,
     "OB Engine 1m": 1791163880.961612,
     "MSB-OB": 1791345000.9680693,
-    "OB Engine 5m": 1791522076.1899538,
+    "OB Engine 5m": 1791534934.7123835,
     "SMA8": 1791526543.4845653
   },
   "last_signal_direction": {
@@ -32,7 +32,7 @@
     "SMA13/EMA18": "long",
     "OB Engine 1m": "long",
     "MSB-OB": "short",
-    "OB Engine 5m": "long",
+    "OB Engine 5m": "short",
     "SMA8": "long"
   },
   "last_summary_date": "2026-10-09",
@@ -42,7 +42,7 @@
   "global_last_signal_time": 1791531064.6041899,
   "global_last_signal_candle": 1791530424000,
   "obe_last_bar": {
-    "5m": 1791533978000,
+    "5m": 1791534312000,
     "1m": 1791176640000
   }
 }
