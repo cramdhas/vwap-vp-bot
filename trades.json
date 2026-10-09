@@ -4266,5 +4266,23 @@
     "single_target": true,
     "scan_from_ms": 1791521700000,
     "timeframe": "5m"
+  },
+  {
+    "direction": "long",
+    "entry": 4193.0,
+    "sl_price": 4183.0,
+    "original_sl": 4183.0,
+    "tp1_price": 4201.0,
+    "tp2_price": 4201.0,
+    "tp1_hit": false,
+    "strategy": "SMA8",
+    "level": "SMA8 Cross Up @ 4193.90 (SMA8 line 4193.85, offset 1)",
+    "opened_at": "2026-10-09T06:15:43.481178+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true
   }
 ]
