@@ -7,14 +7,14 @@
     "FVG": 1790858150.3295374,
     "SMA6": 1791538267.0196476,
     "MA2/148 Cross": 1790365259.4894884,
-    "SMA18 Touch": 1791172548.0800576,
+    "SMA18 Touch": 1791563492.4781213,
     "Doji": 1790610071.3903291,
     "MA4/45 Pullback": 1790613970.3479655,
     "MA3/25 Cross": 1791445892.3392425,
     "SMA13/EMA18": 1791555646.7029,
     "OB Engine 1m": 1791163880.961612,
     "MSB-OB": 1791554734.8014476,
-    "OB Engine 5m": 1791550536.7497842,
+    "OB Engine 5m": 1791563493.0181334,
     "SMA8": 1791526543.4845653
   },
   "last_signal_direction": {
@@ -25,7 +25,7 @@
     "FVG": "long",
     "SMA6": "short",
     "MA2/148 Cross": "long",
-    "SMA18 Touch": "short",
+    "SMA18 Touch": "long",
     "Doji": "short",
     "MA4/45 Pullback": "short",
     "MA3/25 Cross": "short",
@@ -39,10 +39,10 @@
   "zone_last_fired": {},
   "last_weekly_summary_date": "2026-10-03",
   "last_doji_candle": 1790610600000,
-  "global_last_signal_time": 1791555645.9720685,
-  "global_last_signal_candle": 1791554991000,
+  "global_last_signal_time": 1791563491.8224096,
+  "global_last_signal_candle": 1791562862000,
   "obe_last_bar": {
-    "5m": 1791562775000,
+    "5m": 1791562862000,
     "1m": 1791176640000
   }
 }

@@ -4479,5 +4479,43 @@
     "scan_from_ms": 1791555291000,
     "timeframe": "5m",
     "signal_feed": "xaus_chart"
+  },
+  {
+    "direction": "long",
+    "entry": 4189.899902,
+    "sl_price": 4182.9,
+    "original_sl": 4182.9,
+    "tp1_price": 4195.9,
+    "tp2_price": 4195.9,
+    "tp1_hit": false,
+    "strategy": "SMA18 Touch",
+    "level": "SMA18 Touch Up @ 4189.90 (slope +0.41)",
+    "opened_at": "2026-10-09T16:31:32.474576+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true
+  },
+  {
+    "direction": "long",
+    "entry": 4190.8999,
+    "sl_price": 4183.9,
+    "original_sl": 4183.9,
+    "tp1_price": 4196.9,
+    "tp2_price": 4196.9,
+    "tp1_hit": false,
+    "strategy": "OB Engine 5m",
+    "level": "OB Engine 5m LONG @ 4190.90 (OB Retest)",
+    "opened_at": "2026-10-09T16:31:33.014556+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true,
+    "scan_from_ms": 1791563162000,
+    "timeframe": "5m"
   }
 ]
