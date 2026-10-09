@@ -14,7 +14,7 @@
     "SMA13/EMA18": 1791506447.7742105,
     "OB Engine 1m": 1791163880.961612,
     "MSB-OB": 1791345000.9680693,
-    "OB Engine 5m": 1791519042.8377714
+    "OB Engine 5m": 1791522076.1899538
   },
   "last_signal_direction": {
     "VWAP+VP": "long",
@@ -40,7 +40,7 @@
   "global_last_signal_time": 1791516969.190073,
   "global_last_signal_candle": 1791516309000,
   "obe_last_bar": {
-    "5m": 1791521120000,
+    "5m": 1791521421000,
     "1m": 1791176640000
   }
 }
