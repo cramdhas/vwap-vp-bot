@@ -4188,5 +4188,43 @@
     "scan_from_ms": 1791506114000,
     "timeframe": "5m",
     "signal_feed": "xaus_chart"
+  },
+  {
+    "direction": "short",
+    "entry": 4176.799805,
+    "sl_price": 4186.8,
+    "original_sl": 4186.8,
+    "tp1_price": 4168.8,
+    "tp2_price": 4168.8,
+    "tp1_hit": false,
+    "strategy": "SMA6",
+    "level": "SMA6 Cross Down @ 4176.60 (SMA6 line 4177.17, offset 1)",
+    "opened_at": "2026-10-09T03:36:09.703432+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true
+  },
+  {
+    "direction": "long",
+    "entry": 4176.5996,
+    "sl_price": 4169.6,
+    "original_sl": 4169.6,
+    "tp1_price": 4182.6,
+    "tp2_price": 4182.6,
+    "tp1_hit": false,
+    "strategy": "OB Engine 5m",
+    "level": "OB Engine 5m LONG @ 4176.60 (OB Retest)",
+    "opened_at": "2026-10-09T03:36:10.196072+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true,
+    "scan_from_ms": 1791516609000,
+    "timeframe": "5m"
   }
 ]
