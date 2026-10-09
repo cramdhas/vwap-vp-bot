@@ -11,7 +11,7 @@
     "Doji": 1790610071.3903291,
     "MA4/45 Pullback": 1790613970.3479655,
     "MA3/25 Cross": 1791445892.3392425,
-    "SMA13/EMA18": 1791531065.2339804,
+    "SMA13/EMA18": 1791555646.7029,
     "OB Engine 1m": 1791163880.961612,
     "MSB-OB": 1791554734.8014476,
     "OB Engine 5m": 1791550536.7497842,
@@ -41,10 +41,10 @@
   },
   "last_weekly_summary_date": "2026-10-03",
   "last_doji_candle": 1790610600000,
-  "global_last_signal_time": 1791554734.288386,
-  "global_last_signal_candle": 1791554043000,
+  "global_last_signal_time": 1791555645.9720685,
+  "global_last_signal_candle": 1791554991000,
   "obe_last_bar": {
-    "5m": 1791554691000,
+    "5m": 1791554991000,
     "1m": 1791176640000
   }
 }

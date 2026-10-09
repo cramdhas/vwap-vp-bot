@@ -4458,5 +4458,26 @@
     "scan_from_ms": 1791554343000,
     "timeframe": "5m",
     "signal_feed": "xaus_chart"
+  },
+  {
+    "direction": "long",
+    "entry": 4192.7998,
+    "sl_price": 4185.8,
+    "original_sl": 4185.8,
+    "tp1_price": 4198.8,
+    "tp2_price": 4198.8,
+    "tp1_hit": false,
+    "strategy": "SMA13/EMA18",
+    "level": "SMA13/EMA18 Cross Up @ 4192.80",
+    "opened_at": "2026-10-09T14:20:46.699308+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true,
+    "scan_from_ms": 1791555291000,
+    "timeframe": "5m",
+    "signal_feed": "xaus_chart"
   }
 ]
