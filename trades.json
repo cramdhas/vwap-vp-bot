@@ -4343,5 +4343,23 @@
     "single_target": true,
     "scan_from_ms": 1791534612000,
     "timeframe": "5m"
+  },
+  {
+    "direction": "short",
+    "entry": 4188.100098,
+    "sl_price": 4198.1,
+    "original_sl": 4198.1,
+    "tp1_price": 4180.1,
+    "tp2_price": 4180.1,
+    "tp1_hit": false,
+    "strategy": "SMA6",
+    "level": "SMA6 Cross Down @ 4188.40 (SMA6 line 4188.73, offset 1)",
+    "opened_at": "2026-10-09T09:31:07.017546+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true
   }
 ]
