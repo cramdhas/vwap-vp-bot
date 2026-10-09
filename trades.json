@@ -4379,5 +4379,25 @@
     "pnl_points": 0.0,
     "breakeven_enabled": false,
     "single_target": true
+  },
+  {
+    "direction": "long",
+    "entry": 4179.8003,
+    "sl_price": 4172.8,
+    "original_sl": 4172.8,
+    "tp1_price": 4185.8,
+    "tp2_price": 4185.8,
+    "tp1_hit": false,
+    "strategy": "OB Engine 5m",
+    "level": "OB Engine 5m LONG @ 4179.80 (OB Retest)",
+    "opened_at": "2026-10-09T12:50:44.764979+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true,
+    "scan_from_ms": 1791549937000,
+    "timeframe": "5m"
   }
 ]
