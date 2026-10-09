@@ -2,7 +2,7 @@
   "last_signal_time": {
     "VWAP+VP": 1790826371.3506057,
     "Liquidity Sweep": 1790598360.3657613,
-    "EMA+RSI": 1791549646.953161,
+    "EMA+RSI": 1791552932.854552,
     "Order Block": 1791259285.3840325,
     "FVG": 1790858150.3295374,
     "SMA6": 1791538267.0196476,
@@ -39,10 +39,10 @@
   "zone_last_fired": {},
   "last_weekly_summary_date": "2026-10-03",
   "last_doji_candle": 1790610600000,
-  "global_last_signal_time": 1791549646.3068812,
-  "global_last_signal_candle": 1791548985000,
+  "global_last_signal_time": 1791552932.2918375,
+  "global_last_signal_candle": 1791552239000,
   "obe_last_bar": {
-    "5m": 1791551989000,
+    "5m": 1791552239000,
     "1m": 1791176640000
   }
 }
