@@ -36,15 +36,13 @@
     "SMA8": "long"
   },
   "last_summary_date": "2026-10-09",
-  "zone_last_fired": {
-    "MSBOB-long-1791553800000": 1791554734.2652137
-  },
+  "zone_last_fired": {},
   "last_weekly_summary_date": "2026-10-03",
   "last_doji_candle": 1790610600000,
   "global_last_signal_time": 1791555645.9720685,
   "global_last_signal_candle": 1791554991000,
   "obe_last_bar": {
-    "5m": 1791557460000,
+    "5m": 1791557644000,
     "1m": 1791176640000
   }
 }
