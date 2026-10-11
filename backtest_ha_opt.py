@@ -204,8 +204,8 @@ def main():
     if new:
         msg.append("NEW loose rule (7/6):\n" + fmt(new))
     msg.append(f"Variants positive in BOTH train and test: {len(both_pos)} of {len(eligible)} "
-               f"({len(both_pos) / max(len(eligible), 1) * 100:.1f}%). On pure random prices about 1-2% pass by luck, "
-               f"so only trust it if this is clearly higher and the winners share the same settings.")
+               f"({len(both_pos) / max(len(eligible), 1) * 100:.1f}%). On random prices this number swings from about 1% to 11%, "
+               f"so it is NOT proof. Look for winners sharing the same settings, then confirm with live forward testing.")
     msg.append("TOP 8 by robustness (worst of train/test per-trade):")
     msg += [f"{k + 1}. " + fmt(r) for k, r in enumerate(robust[:8])] or ["none - no variant was profitable in both periods"]
     msg.append("TOP 5 by TRAIN only (watch the TEST numbers):")
