@@ -35,7 +35,7 @@
     "OB Engine 5m": "long",
     "SMA8": "long"
   },
-  "last_summary_date": "2026-10-09",
+  "last_summary_date": "2026-10-11",
   "zone_last_fired": {},
   "last_weekly_summary_date": "2026-10-10",
   "last_doji_candle": 1790610600000,
@@ -44,5 +44,64 @@
   "obe_last_bar": {
     "5m": 1791578704000,
     "1m": 1791176640000
+  },
+  "news_cache": {
+    "fetched": 1791756079.5383167,
+    "events": [
+      {
+        "t": 1791981000,
+        "title": "Core CPI m/m",
+        "cur": "USD",
+        "impact": "High"
+      },
+      {
+        "t": 1791981000,
+        "title": "Core CPI y/y",
+        "cur": "USD",
+        "impact": "High"
+      },
+      {
+        "t": 1791981000,
+        "title": "CPI m/m",
+        "cur": "USD",
+        "impact": "High"
+      },
+      {
+        "t": 1791981000,
+        "title": "CPI y/y",
+        "cur": "USD",
+        "impact": "High"
+      },
+      {
+        "t": 1792067400,
+        "title": "Core PPI m/m",
+        "cur": "USD",
+        "impact": "High"
+      },
+      {
+        "t": 1792067400,
+        "title": "Core Retail Sales m/m",
+        "cur": "USD",
+        "impact": "High"
+      },
+      {
+        "t": 1792067400,
+        "title": "PPI m/m",
+        "cur": "USD",
+        "impact": "High"
+      },
+      {
+        "t": 1792067400,
+        "title": "Retail Sales m/m",
+        "cur": "USD",
+        "impact": "High"
+      },
+      {
+        "t": 1792121400,
+        "title": "Fed Chairman Warsh Speaks",
+        "cur": "USD",
+        "impact": "High"
+      }
+    ]
   }
 }
