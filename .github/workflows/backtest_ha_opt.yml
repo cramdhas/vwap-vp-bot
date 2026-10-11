@@ -1,0 +1,33 @@
+name: Backtest HA Variants
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Days to test"
+        default: "120"
+      slip:
+        description: "Slippage in points"
+        default: "0.4"
+
+jobs:
+  variants:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - name: Run variant test
+        env:
+          TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python backtest_ha_opt.py --days ${{ github.event.inputs.days || '120' }} --slip ${{ github.event.inputs.slip || '0.4' }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ha-variants
+          path: ha_variants.csv
+          
