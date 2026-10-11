@@ -4593,5 +4593,26 @@
     "pnl_points": 0.0,
     "breakeven_enabled": false,
     "single_target": true
+  },
+  {
+    "direction": "long",
+    "entry": 4195.6001,
+    "sl_price": 4188.6,
+    "original_sl": 4188.6,
+    "tp1_price": 4201.6,
+    "tp2_price": 4201.6,
+    "tp1_hit": false,
+    "strategy": "SMA14/EMA28",
+    "level": "SMA14/EMA28 Cross Up (SMA14 4189.59 / EMA28 4189.54)",
+    "opened_at": "2026-10-11T23:50:46.761344+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true,
+    "scan_from_ms": 1791762337000,
+    "timeframe": "5m",
+    "signal_feed": "xaus_chart"
   }
 ]
