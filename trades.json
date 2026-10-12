@@ -4656,5 +4656,25 @@
     "scan_from_ms": 1791772135000,
     "timeframe": "5m",
     "signal_feed": "xaus_chart"
+  },
+  {
+    "direction": "short",
+    "entry": 4206.7002,
+    "sl_price": 4213.7,
+    "original_sl": 4213.7,
+    "tp1_price": 4200.7,
+    "tp2_price": 4200.7,
+    "tp1_hit": false,
+    "strategy": "OB Engine 5m",
+    "level": "OB Engine 5m SHORT @ 4206.70 (MACD Fallback)",
+    "opened_at": "2026-10-12T03:35:36.662792+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true,
+    "scan_from_ms": 1791775500000,
+    "timeframe": "5m"
   }
 ]
