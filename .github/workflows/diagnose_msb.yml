@@ -1,0 +1,26 @@
+name: Diagnose MSB-OB
+
+on:
+  workflow_dispatch:
+    inputs:
+      at:
+        description: "Candle OPEN time in UTC (05:40 IST = 00:10 UTC)"
+        default: "2026-10-12 00:10"
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - name: Run diagnosis
+        env:
+          TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python diagnose_msb.py --at "${{ github.event.inputs.at || '2026-10-12 00:10' }}"
+        
