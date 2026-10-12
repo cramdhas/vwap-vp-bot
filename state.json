@@ -17,7 +17,7 @@
     "OB Engine 5m": 1791576332.076839,
     "SMA8": 1791526543.4845653,
     "SMA14/EMA28": 1791762646.7642813,
-    "HA Reversal": 1791768044.1368666
+    "HA Reversal": 1791772536.076026
   },
   "last_signal_direction": {
     "VWAP+VP": "long",
@@ -40,13 +40,15 @@
     "HA Reversal": "short"
   },
   "last_summary_date": "2026-10-12",
-  "zone_last_fired": {},
+  "zone_last_fired": {
+    "HA-short-1791771835000": 1791772535.379971
+  },
   "last_weekly_summary_date": "2026-10-10",
   "last_doji_candle": 1790610600000,
   "global_last_signal_time": 1791567642.3207152,
   "global_last_signal_candle": 1791567000000,
   "obe_last_bar": {
-    "5m": 1791771570000,
+    "5m": 1791771835000,
     "1m": 1791176640000
   },
   "news_cache": {
