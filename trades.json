@@ -4900,5 +4900,23 @@
     "signal_feed": "xaus_chart",
     "feed_frame": "basis",
     "feed_basis": 23.90039500000057
+  },
+  {
+    "direction": "long",
+    "entry": 4175.700195,
+    "sl_price": 4165.7,
+    "original_sl": 4165.7,
+    "tp1_price": 4183.7,
+    "tp2_price": 4183.7,
+    "tp1_hit": false,
+    "strategy": "SMA8",
+    "level": "SMA8 Cross Up @ 4176.40 (SMA8 line 4176.34, offset 1)",
+    "opened_at": "2026-10-12T14:10:48.297324+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true
   }
 ]
