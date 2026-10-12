@@ -4696,5 +4696,27 @@
     "single_target": true,
     "scan_from_ms": 1791778188000,
     "timeframe": "5m"
+  },
+  {
+    "direction": "short",
+    "entry": 4210.0,
+    "sl_price": 4218.0,
+    "original_sl": 4218.0,
+    "tp1_price": 4204.0,
+    "tp2_price": 4204.0,
+    "tp1_hit": false,
+    "strategy": "HA Reversal",
+    "level": "HA Reversal: Red no-top-wick after 4 opposite HA candles",
+    "opened_at": "2026-10-12T07:25:35.027050+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true,
+    "scan_from_ms": 1791789567000,
+    "timeframe": "5m",
+    "signal_feed": "xaus_chart",
+    "feed_frame": "raw"
   }
 ]
