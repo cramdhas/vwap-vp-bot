@@ -5792,5 +5792,25 @@
     "signal_feed": "xaus_intraday",
     "feed_frame": "basis",
     "feed_basis": -0.30029300000023795
+  },
+  {
+    "direction": "long",
+    "entry": 4166.7002,
+    "sl_price": 4159.7,
+    "original_sl": 4159.7,
+    "tp1_price": 4172.7,
+    "tp2_price": 4172.7,
+    "tp1_hit": false,
+    "strategy": "OB Engine 5m",
+    "level": "OB Engine 5m LONG @ 4166.70 (OB Retest)",
+    "opened_at": "2026-10-13T15:10:45.732319+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true,
+    "scan_from_ms": 1791904200000,
+    "timeframe": "5m"
   }
 ]
