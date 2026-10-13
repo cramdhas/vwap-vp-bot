@@ -13,11 +13,11 @@
     "MA3/25 Cross": 1791790992.2999954,
     "SMA13/EMA18": 1791555646.7029,
     "OB Engine 1m": 1791163880.961612,
-    "MSB-OB": 1791554734.8014476,
+    "MSB-OB": 1791858936.141651,
     "OB Engine 5m": 1791846333.3599265,
     "SMA8": 1791819651.2395275,
     "SMA14/EMA28": 1791762646.7642813,
-    "HA Reversal": 1791849333.1418054
+    "HA Reversal": 1791858936.722854
   },
   "last_signal_direction": {
     "VWAP+VP": "long",
@@ -40,13 +40,16 @@
     "HA Reversal": "short"
   },
   "last_summary_date": "2026-10-13",
-  "zone_last_fired": {},
+  "zone_last_fired": {
+    "MSBOB-long-1791858000000": 1791858931.566437,
+    "HA-short-1791858244000": 1791858931.5678034
+  },
   "last_weekly_summary_date": "2026-10-10",
   "last_doji_candle": 1790610600000,
   "global_last_signal_time": 1791567642.3207152,
   "global_last_signal_candle": 1791567000000,
   "obe_last_bar": {
-    "5m": 1791857981000,
+    "5m": 1791858244000,
     "1m": 1791176640000
   },
   "news_cache": {
