@@ -1,6 +1,6 @@
 {
   "last_signal_time": {
-    "VWAP+VP": 1791894702.2625053,
+    "VWAP+VP": 1791908149.023004,
     "Liquidity Sweep": 1791884166.962246,
     "EMA+RSI": 1791900649.1021845,
     "Order Block": 1791259285.3840325,
@@ -23,7 +23,7 @@
     "VP Reversal": 1791900649.5954263
   },
   "last_signal_direction": {
-    "VWAP+VP": "long",
+    "VWAP+VP": "short",
     "Liquidity Sweep": "long",
     "EMA+RSI": "short",
     "Order Block": "short",
@@ -52,7 +52,7 @@
   "global_last_signal_time": 1791567642.3207152,
   "global_last_signal_candle": 1791567000000,
   "obe_last_bar": {
-    "5m": 1791907500000,
+    "5m": 1791907800000,
     "1m": 1791176640000
   },
   "news_cache": {

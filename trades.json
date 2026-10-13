@@ -5812,5 +5812,23 @@
     "single_target": true,
     "scan_from_ms": 1791904200000,
     "timeframe": "5m"
+  },
+  {
+    "direction": "short",
+    "entry": 4160.899902,
+    "sl_price": 4167.9,
+    "original_sl": 4167.9,
+    "tp1_price": 4154.9,
+    "tp2_price": 4154.9,
+    "tp1_hit": false,
+    "strategy": "VWAP+VP",
+    "level": "VAL",
+    "opened_at": "2026-10-13T16:15:49.019378+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true
   }
 ]
