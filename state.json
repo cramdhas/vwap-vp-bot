@@ -40,15 +40,13 @@
     "HA Reversal": "short"
   },
   "last_summary_date": "2026-10-13",
-  "zone_last_fired": {
-    "HA-short-1791849221000": 1791849924.2437167
-  },
+  "zone_last_fired": {},
   "last_weekly_summary_date": "2026-10-10",
   "last_doji_candle": 1790610600000,
   "global_last_signal_time": 1791567642.3207152,
   "global_last_signal_candle": 1791567000000,
   "obe_last_bar": {
-    "5m": 1791852634000,
+    "5m": 1791852840000,
     "1m": 1791176640000
   },
   "news_cache": {
