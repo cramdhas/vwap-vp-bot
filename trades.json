@@ -5281,5 +5281,28 @@
     "signal_feed": "twelvedata",
     "feed_frame": "basis",
     "feed_basis": -0.851875000000291
+  },
+  {
+    "direction": "short",
+    "entry": 4189.7002,
+    "sl_price": 4199.7,
+    "original_sl": 4199.7,
+    "tp1_price": 4181.7,
+    "tp2_price": 4181.7,
+    "tp1_hit": false,
+    "strategy": "HalfTrend",
+    "level": "HalfTrend Flip Down @ 4189.70 (line 4193.42)",
+    "opened_at": "2026-10-13T07:11:12.912968+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true,
+    "scan_from_ms": 1791875400000,
+    "timeframe": "5m",
+    "signal_feed": "twelvedata",
+    "feed_frame": "basis",
+    "feed_basis": -0.9227150000006077
   }
 ]
