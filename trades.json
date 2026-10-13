@@ -5304,5 +5304,23 @@
     "signal_feed": "twelvedata",
     "feed_frame": "basis",
     "feed_basis": -0.9227150000006077
+  },
+  {
+    "direction": "long",
+    "entry": 4192.200195,
+    "sl_price": 4185.2,
+    "original_sl": 4185.2,
+    "tp1_price": 4198.2,
+    "tp2_price": 4198.2,
+    "tp1_hit": false,
+    "strategy": "EMA+RSI",
+    "level": "EMA Cross RSI 56.3",
+    "opened_at": "2026-10-13T07:25:59.774907+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true
   }
 ]
