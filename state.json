@@ -47,7 +47,6 @@
   },
   "last_summary_date": "2026-10-13",
   "zone_last_fired": {
-    "HT-short-1791900300000": 1791900648.5024638,
     "HA-short-1791903600000": 1791903937.6631007
   },
   "last_weekly_summary_date": "2026-10-10",
@@ -55,7 +54,7 @@
   "global_last_signal_time": 1791567642.3207152,
   "global_last_signal_candle": 1791567000000,
   "obe_last_bar": {
-    "5m": 1791903900000,
+    "5m": 1791904200000,
     "1m": 1791176640000
   },
   "news_cache": {
