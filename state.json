@@ -1,6 +1,6 @@
 {
   "last_signal_time": {
-    "VWAP+VP": 1791908149.023004,
+    "VWAP+VP": 1791913545.7783365,
     "Liquidity Sweep": 1791884166.962246,
     "EMA+RSI": 1791900649.1021845,
     "Order Block": 1791259285.3840325,
@@ -52,7 +52,7 @@
   "global_last_signal_time": 1791567642.3207152,
   "global_last_signal_candle": 1791567000000,
   "obe_last_bar": {
-    "5m": 1791912900000,
+    "5m": 1791913200000,
     "1m": 1791176640000
   },
   "news_cache": {
