@@ -5830,5 +5830,23 @@
     "pnl_points": 0.0,
     "breakeven_enabled": false,
     "single_target": true
+  },
+  {
+    "direction": "short",
+    "entry": 4157.299805,
+    "sl_price": 4167.3,
+    "original_sl": 4167.3,
+    "tp1_price": 4149.3,
+    "tp2_price": 4149.3,
+    "tp1_hit": false,
+    "strategy": "SMA8",
+    "level": "SMA8 Cross Down @ 4157.30 (SMA8 line 4159.25, offset 1)",
+    "opened_at": "2026-10-13T16:25:37.756937+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true
   }
 ]
