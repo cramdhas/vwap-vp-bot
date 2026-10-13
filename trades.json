@@ -5474,10 +5474,10 @@
     "strategy": "Liquidity Sweep",
     "level": "Sweep Low 4183.51",
     "opened_at": "2026-10-13T09:36:06.958646+00:00",
-    "status": "open",
-    "closed_at": null,
-    "result": null,
-    "pnl_points": 0.0,
+    "status": "closed",
+    "closed_at": "2026-10-13T12:31:41.156002+00:00",
+    "result": "win",
+    "pnl_points": 6,
     "breakeven_enabled": false,
     "single_target": true
   },
@@ -5628,5 +5628,23 @@
     "single_target": true,
     "scan_from_ms": 1791892800000,
     "timeframe": "5m"
+  },
+  {
+    "direction": "long",
+    "entry": 4190.5,
+    "sl_price": 4183.5,
+    "original_sl": 4183.5,
+    "tp1_price": 4196.5,
+    "tp2_price": 4196.5,
+    "tp1_hit": false,
+    "strategy": "VWAP+VP",
+    "level": "POC",
+    "opened_at": "2026-10-13T12:31:42.257938+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true
   }
 ]
