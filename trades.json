@@ -5521,5 +5521,28 @@
     "pnl_points": 0.0,
     "breakeven_enabled": false,
     "single_target": true
+  },
+  {
+    "direction": "short",
+    "entry": 4181.8999,
+    "sl_price": 4191.9,
+    "original_sl": 4191.9,
+    "tp1_price": 4171.9,
+    "tp2_price": 4171.9,
+    "tp1_hit": false,
+    "strategy": "MSB-OB",
+    "level": "Bearish MSB / SELL | ZigZag 9 | Fib 0 | Break Level 4182.00",
+    "opened_at": "2026-10-13T10:56:02.792031+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true,
+    "scan_from_ms": 1791888900000,
+    "timeframe": "5m",
+    "signal_feed": "twelvedata",
+    "feed_frame": "basis",
+    "feed_basis": -1.4027619999997114
   }
 ]
