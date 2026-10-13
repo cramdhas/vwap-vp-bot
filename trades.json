@@ -5503,5 +5503,23 @@
     "signal_feed": "twelvedata",
     "feed_frame": "basis",
     "feed_basis": -0.28716200000053504
+  },
+  {
+    "direction": "short",
+    "entry": 4186.0,
+    "sl_price": 4196.0,
+    "original_sl": 4196.0,
+    "tp1_price": 4178.0,
+    "tp2_price": 4178.0,
+    "tp1_hit": false,
+    "strategy": "SMA6",
+    "level": "SMA6 Cross Down @ 4186.00 (SMA6 line 4186.74, offset 1)",
+    "opened_at": "2026-10-13T09:51:13.728247+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true
   }
 ]
