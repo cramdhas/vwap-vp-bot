@@ -44,15 +44,13 @@
     "Dynamic Grid": "long"
   },
   "last_summary_date": "2026-10-13",
-  "zone_last_fired": {
-    "HT-short-1791875100000": 1791875472.0912385
-  },
+  "zone_last_fired": {},
   "last_weekly_summary_date": "2026-10-10",
   "last_doji_candle": 1790610600000,
   "global_last_signal_time": 1791567642.3207152,
   "global_last_signal_candle": 1791567000000,
   "obe_last_bar": {
-    "5m": 1791878400000,
+    "5m": 1791878700000,
     "1m": 1791176640000
   },
   "news_cache": {
