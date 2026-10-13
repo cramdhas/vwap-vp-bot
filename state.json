@@ -2,7 +2,7 @@
   "last_signal_time": {
     "VWAP+VP": 1791894702.2625053,
     "Liquidity Sweep": 1791884166.962246,
-    "EMA+RSI": 1791891366.8038902,
+    "EMA+RSI": 1791900649.1021845,
     "Order Block": 1791259285.3840325,
     "FVG": 1790858150.3295374,
     "SMA6": 1791885073.7330446,
@@ -18,13 +18,14 @@
     "SMA8": 1791877574.7517202,
     "SMA14/EMA28": 1791892907.501037,
     "HA Reversal": 1791869466.7029912,
-    "HalfTrend": 1791875472.9171927,
-    "Dynamic Grid": 1791884167.5929222
+    "HalfTrend": 1791900650.1306214,
+    "Dynamic Grid": 1791884167.5929222,
+    "VP Reversal": 1791900649.5954263
   },
   "last_signal_direction": {
     "VWAP+VP": "long",
     "Liquidity Sweep": "long",
-    "EMA+RSI": "long",
+    "EMA+RSI": "short",
     "Order Block": "short",
     "FVG": "long",
     "SMA6": "short",
@@ -41,16 +42,19 @@
     "SMA14/EMA28": "long",
     "HA Reversal": "short",
     "HalfTrend": "short",
-    "Dynamic Grid": "long"
+    "Dynamic Grid": "long",
+    "VP Reversal": "short"
   },
   "last_summary_date": "2026-10-13",
-  "zone_last_fired": {},
+  "zone_last_fired": {
+    "HT-short-1791900300000": 1791900648.5024638
+  },
   "last_weekly_summary_date": "2026-10-10",
   "last_doji_candle": 1790610600000,
   "global_last_signal_time": 1791567642.3207152,
   "global_last_signal_candle": 1791567000000,
   "obe_last_bar": {
-    "5m": 1791900000000,
+    "5m": 1791900300000,
     "1m": 1791176640000
   },
   "news_cache": {
@@ -111,5 +115,8 @@
         "impact": "High"
       }
     ]
+  },
+  "vp_fired": {
+    "VP Reversal|short": 1791900649.1022003
   }
 }
