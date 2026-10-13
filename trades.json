@@ -5217,5 +5217,28 @@
     "signal_feed": "xaus_intraday",
     "feed_frame": "basis",
     "feed_basis": 2.699706999999762
+  },
+  {
+    "direction": "long",
+    "entry": 4192.8999,
+    "sl_price": 4185.9,
+    "original_sl": 4185.9,
+    "tp1_price": 4198.9,
+    "tp2_price": 4198.9,
+    "tp1_hit": false,
+    "strategy": "MA3/25 Cross",
+    "level": "MA3/25 Touch Up @ 4192.90 (MA25 4192.64, slope +0.52)",
+    "opened_at": "2026-10-13T05:50:48.798323+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true,
+    "scan_from_ms": 1791870600000,
+    "timeframe": "5m",
+    "signal_feed": "xaus_intraday",
+    "feed_frame": "basis",
+    "feed_basis": 1.100097999999889
   }
 ]

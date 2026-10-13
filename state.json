@@ -10,7 +10,7 @@
     "SMA18 Touch": 1791798048.320062,
     "Doji": 1790610071.3903291,
     "MA4/45 Pullback": 1790613970.3479655,
-    "MA3/25 Cross": 1791790992.2999954,
+    "MA3/25 Cross": 1791870648.80142,
     "SMA13/EMA18": 1791555646.7029,
     "OB Engine 1m": 1791163880.961612,
     "MSB-OB": 1791864085.6132736,
@@ -31,7 +31,7 @@
     "SMA18 Touch": "short",
     "Doji": "short",
     "MA4/45 Pullback": "short",
-    "MA3/25 Cross": "short",
+    "MA3/25 Cross": "long",
     "SMA13/EMA18": "long",
     "OB Engine 1m": "long",
     "MSB-OB": "short",
@@ -50,7 +50,7 @@
   "global_last_signal_time": 1791567642.3207152,
   "global_last_signal_candle": 1791567000000,
   "obe_last_bar": {
-    "5m": 1791870000000,
+    "5m": 1791870300000,
     "1m": 1791176640000
   },
   "news_cache": {
