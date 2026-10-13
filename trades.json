@@ -5061,5 +5061,23 @@
     "signal_feed": "xaus_chart",
     "feed_frame": "basis",
     "feed_basis": 23.90039500000057
+  },
+  {
+    "direction": "short",
+    "entry": 4165.700195,
+    "sl_price": 4175.7,
+    "original_sl": 4175.7,
+    "tp1_price": 4157.7,
+    "tp2_price": 4157.7,
+    "tp1_hit": false,
+    "strategy": "SMA6",
+    "level": "SMA6 Cross Down @ 4165.90 (SMA6 line 4166.30, offset 1)",
+    "opened_at": "2026-10-13T00:31:04.794174+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true
   }
 ]
