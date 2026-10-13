@@ -5322,5 +5322,28 @@
     "pnl_points": 0.0,
     "breakeven_enabled": false,
     "single_target": true
+  },
+  {
+    "direction": "long",
+    "entry": 4192.2002,
+    "sl_price": 4185.2,
+    "original_sl": 4185.2,
+    "tp1_price": 4198.2,
+    "tp2_price": 4198.2,
+    "tp1_hit": false,
+    "strategy": "Dynamic Grid",
+    "level": "Dynamic Grid BUY | Degree 1 | HMA 4197.60",
+    "opened_at": "2026-10-13T07:41:09.157849+00:00",
+    "status": "open",
+    "closed_at": null,
+    "result": null,
+    "pnl_points": 0.0,
+    "breakeven_enabled": false,
+    "single_target": true,
+    "scan_from_ms": 1791877200000,
+    "timeframe": "5m",
+    "signal_feed": "twelvedata",
+    "feed_frame": "basis",
+    "feed_basis": -1.626365000000078
   }
 ]

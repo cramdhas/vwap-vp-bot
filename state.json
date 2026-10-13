@@ -19,7 +19,7 @@
     "SMA14/EMA28": 1791762646.7642813,
     "HA Reversal": 1791869466.7029912,
     "HalfTrend": 1791875472.9171927,
-    "Dynamic Grid": 1791873670.9642904
+    "Dynamic Grid": 1791877269.1612616
   },
   "last_signal_direction": {
     "VWAP+VP": "long",
@@ -52,7 +52,7 @@
   "global_last_signal_time": 1791567642.3207152,
   "global_last_signal_candle": 1791567000000,
   "obe_last_bar": {
-    "5m": 1791876600000,
+    "5m": 1791876900000,
     "1m": 1791176640000
   },
   "news_cache": {
