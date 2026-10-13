@@ -50,11 +50,11 @@
   "global_last_signal_time": 1791567642.3207152,
   "global_last_signal_candle": 1791567000000,
   "obe_last_bar": {
-    "5m": 1791885900000,
+    "5m": 1791886200000,
     "1m": 1791176640000
   },
   "news_cache": {
-    "fetched": 1791864944.4331229,
+    "fetched": 1791886570.9243066,
     "events": [
       {
         "t": 1791981000,
