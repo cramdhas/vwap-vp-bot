@@ -1,7 +1,7 @@
 {
   "last_signal_time": {
     "VWAP+VP": 1791881473.5814302,
-    "Liquidity Sweep": 1790598360.3657613,
+    "Liquidity Sweep": 1791884166.962246,
     "EMA+RSI": 1791876359.77916,
     "Order Block": 1791259285.3840325,
     "FVG": 1790858150.3295374,
@@ -19,11 +19,11 @@
     "SMA14/EMA28": 1791762646.7642813,
     "HA Reversal": 1791869466.7029912,
     "HalfTrend": 1791875472.9171927,
-    "Dynamic Grid": 1791880292.7932692
+    "Dynamic Grid": 1791884167.5929222
   },
   "last_signal_direction": {
     "VWAP+VP": "long",
-    "Liquidity Sweep": "short",
+    "Liquidity Sweep": "long",
     "EMA+RSI": "long",
     "Order Block": "short",
     "FVG": "long",
@@ -50,7 +50,7 @@
   "global_last_signal_time": 1791567642.3207152,
   "global_last_signal_candle": 1791567000000,
   "obe_last_bar": {
-    "5m": 1791883500000,
+    "5m": 1791883800000,
     "1m": 1791176640000
   },
   "news_cache": {
