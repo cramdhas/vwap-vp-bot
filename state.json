@@ -15,7 +15,7 @@
     "OB Engine 1m": 1791163880.961612,
     "MSB-OB": 1791864085.6132736,
     "OB Engine 5m": 1791846333.3599265,
-    "SMA8": 1791819651.2395275,
+    "SMA8": 1791877574.7517202,
     "SMA14/EMA28": 1791762646.7642813,
     "HA Reversal": 1791869466.7029912,
     "HalfTrend": 1791875472.9171927,
@@ -37,7 +37,7 @@
     "OB Engine 1m": "long",
     "MSB-OB": "short",
     "OB Engine 5m": "long",
-    "SMA8": "long",
+    "SMA8": "short",
     "SMA14/EMA28": "long",
     "HA Reversal": "short",
     "HalfTrend": "short",
@@ -52,7 +52,7 @@
   "global_last_signal_time": 1791567642.3207152,
   "global_last_signal_candle": 1791567000000,
   "obe_last_bar": {
-    "5m": 1791876900000,
+    "5m": 1791877200000,
     "1m": 1791176640000
   },
   "news_cache": {
