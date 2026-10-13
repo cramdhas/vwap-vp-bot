@@ -13,11 +13,12 @@
     "MA3/25 Cross": 1791790992.2999954,
     "SMA13/EMA18": 1791555646.7029,
     "OB Engine 1m": 1791163880.961612,
-    "MSB-OB": 1791858936.141651,
+    "MSB-OB": 1791864085.6132736,
     "OB Engine 5m": 1791846333.3599265,
     "SMA8": 1791819651.2395275,
     "SMA14/EMA28": 1791762646.7642813,
-    "HA Reversal": 1791863142.7899878
+    "HA Reversal": 1791863142.7899878,
+    "HalfTrend": 1791864086.2415566
   },
   "last_signal_direction": {
     "VWAP+VP": "long",
@@ -33,22 +34,25 @@
     "MA3/25 Cross": "short",
     "SMA13/EMA18": "long",
     "OB Engine 1m": "long",
-    "MSB-OB": "long",
+    "MSB-OB": "short",
     "OB Engine 5m": "long",
     "SMA8": "long",
     "SMA14/EMA28": "long",
-    "HA Reversal": "short"
+    "HA Reversal": "short",
+    "HalfTrend": "short"
   },
   "last_summary_date": "2026-10-13",
   "zone_last_fired": {
-    "HA-short-1791862445000": 1791863142.2269506
+    "HA-short-1791862445000": 1791863142.2269506,
+    "MSBOB-short-1791863382000": 1791864084.7747452,
+    "HT-short-1791863382000": 1791864084.7761545
   },
   "last_weekly_summary_date": "2026-10-10",
   "last_doji_candle": 1790610600000,
   "global_last_signal_time": 1791567642.3207152,
   "global_last_signal_candle": 1791567000000,
   "obe_last_bar": {
-    "5m": 1791863047000,
+    "5m": 1791863382000,
     "1m": 1791176640000
   },
   "news_cache": {
